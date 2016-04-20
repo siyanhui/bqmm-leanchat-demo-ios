@@ -1,0 +1,1018 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1FAD25EBE59E07248BD0F7D5 /* libPods-LeanChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF79D434DB9DF2EFE3DD51B2 /* libPods-LeanChat.a */; };
+		700E6A151B3D2B4E00675021 /* LZPushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 700E6A141B3D2B4E00675021 /* LZPushManager.m */; };
+		703B392E1B74890100E649DC /* CDSNSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 703B392D1B74890100E649DC /* CDSNSView.m */; };
+		7073FC1D1B147048006F2692 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC1C1B147048006F2692 /* main.m */; };
+		7073FC281B147048006F2692 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7073FC271B147048006F2692 /* Images.xcassets */; };
+		7073FCA91B14718C006F2692 /* CDBaseNavC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC431B14718C006F2692 /* CDBaseNavC.m */; };
+		7073FCAB1B14718C006F2692 /* CDBaseTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC471B14718C006F2692 /* CDBaseTableVC.m */; };
+		7073FCAC1B14718C006F2692 /* CDBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC491B14718C006F2692 /* CDBaseVC.m */; };
+		7073FCAD1B14718C006F2692 /* CDWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC4B1B14718C006F2692 /* CDWebViewVC.m */; };
+		7073FCAE1B14718C006F2692 /* CDChatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC4E1B14718C006F2692 /* CDChatVC.m */; };
+		7073FCAF1B14718C006F2692 /* CDConvsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC501B14718C006F2692 /* CDConvsVC.m */; };
+		7073FCB01B14718C006F2692 /* CDAddMemberVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC541B14718C006F2692 /* CDAddMemberVC.m */; };
+		7073FCB11B14718C006F2692 /* CDConvDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC561B14718C006F2692 /* CDConvDetailVC.m */; };
+		7073FCB21B14718C006F2692 /* CDConvNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC581B14718C006F2692 /* CDConvNameVC.m */; };
+		7073FCB31B14718C006F2692 /* CDConvNameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7073FC591B14718C006F2692 /* CDConvNameVC.xib */; };
+		7073FCB41B14718C006F2692 /* CDConvReportAbuseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC5B1B14718C006F2692 /* CDConvReportAbuseVC.m */; };
+		7073FCB51B14718C006F2692 /* CDGroupedConvListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC5D1B14718C006F2692 /* CDGroupedConvListVC.m */; };
+		7073FCB71B14718C006F2692 /* CDEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC611B14718C006F2692 /* CDEntryVC.m */; };
+		7073FCB81B14718C006F2692 /* CDLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC631B14718C006F2692 /* CDLoginVC.m */; };
+		7073FCB91B14718C006F2692 /* CDRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC651B14718C006F2692 /* CDRegisterVC.m */; };
+		7073FCBA1B14718C006F2692 /* CDAddFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC681B14718C006F2692 /* CDAddFriendVC.m */; };
+		7073FCBB1B14718C006F2692 /* CDAddFriendVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7073FC691B14718C006F2692 /* CDAddFriendVC.xib */; };
+		7073FCBC1B14718C006F2692 /* CDFriendListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC6B1B14718C006F2692 /* CDFriendListVC.m */; };
+		7073FCBE1B14718C006F2692 /* CDNewFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC6E1B14718C006F2692 /* CDNewFriendVC.m */; };
+		7073FCBF1B14718C006F2692 /* CDProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC711B14718C006F2692 /* CDProfileVC.m */; };
+		7073FCC11B14718C006F2692 /* CDUserInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC751B14718C006F2692 /* CDUserInfoVC.m */; };
+		7073FCC21B14718C006F2692 /* AVIMCustomMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC781B14718C006F2692 /* AVIMCustomMessage.m */; };
+		7073FCC31B14718C006F2692 /* CDAbuseReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC7B1B14718C006F2692 /* CDAbuseReport.m */; };
+		7073FCC41B14718C006F2692 /* CDAddRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC7D1B14718C006F2692 /* CDAddRequest.m */; };
+		7073FCC51B14718C006F2692 /* CDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC7F1B14718C006F2692 /* CDUser.m */; };
+		7073FCCA1B14718C006F2692 /* CDBadgeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC8E1B14718C006F2692 /* CDBadgeLabel.m */; };
+		7073FCCB1B14718C006F2692 /* CDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC901B14718C006F2692 /* CDButton.m */; };
+		7073FCCE1B14718C006F2692 /* CDEntryActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC961B14718C006F2692 /* CDEntryActionButton.m */; };
+		7073FCCF1B14718C006F2692 /* CDEntryBottomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC981B14718C006F2692 /* CDEntryBottomButton.m */; };
+		7073FCD01B14718C006F2692 /* CDImageLabelTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC9A1B14718C006F2692 /* CDImageLabelTableCell.m */; };
+		7073FCD11B14718C006F2692 /* CDImageLabelTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7073FC9B1B14718C006F2692 /* CDImageLabelTableCell.xib */; };
+		7073FCD21B14718C006F2692 /* CDLabelButtonTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FC9D1B14718C006F2692 /* CDLabelButtonTableCell.m */; };
+		7073FCD31B14718C006F2692 /* CDLabelButtonTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7073FC9E1B14718C006F2692 /* CDLabelButtonTableCell.xib */; };
+		7073FCD41B14718C006F2692 /* CDPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FCA01B14718C006F2692 /* CDPopMenu.m */; };
+		7073FCD51B14718C006F2692 /* CDPopMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FCA21B14718C006F2692 /* CDPopMenuItem.m */; };
+		7073FCD61B14718C006F2692 /* CDPopMenuItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FCA41B14718C006F2692 /* CDPopMenuItemCell.m */; };
+		7073FCD71B14718C006F2692 /* CDResizableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FCA61B14718C006F2692 /* CDResizableButton.m */; };
+		7073FCD81B14718C006F2692 /* CDTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FCA81B14718C006F2692 /* CDTextField.m */; };
+		7073FCDB1B1471A4006F2692 /* CDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7073FCDA1B1471A4006F2692 /* CDAppDelegate.m */; };
+		7087E7771B78B39A003641E2 /* CDPhoneRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7087E7761B78B39A003641E2 /* CDPhoneRegisterVC.m */; };
+		7087E77E1B78BF34003641E2 /* CDEntryBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7087E77D1B78BF34003641E2 /* CDEntryBaseVC.m */; };
+		708DF4711B41A9D20047C994 /* CDSelectMemberVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 708DF4701B41A9D20047C994 /* CDSelectMemberVC.m */; };
+		7092330D1B45299A00E2D1F5 /* CDSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7092330C1B45299A00E2D1F5 /* CDSettingVC.m */; };
+		70B1C51B1B413E1500DCEC8D /* MCMutipleSectionTC.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B1C5191B413E1500DCEC8D /* MCMutipleSectionTC.m */; };
+		70B1C51E1B41430500DCEC8D /* MCPhotographyHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B1C51D1B41430500DCEC8D /* MCPhotographyHelper.m */; };
+		70DC7DB21B2F531F0047B7AB /* CDCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DC7DAB1B2F531F0047B7AB /* CDCacheManager.m */; };
+		70DC7DB31B2F531F0047B7AB /* CDIMService.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DC7DAD1B2F531F0047B7AB /* CDIMService.m */; };
+		70DC7DB41B2F531F0047B7AB /* CDUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DC7DAF1B2F531F0047B7AB /* CDUserManager.m */; };
+		70DC7DB51B2F531F0047B7AB /* CDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DC7DB11B2F531F0047B7AB /* CDUtils.m */; };
+		70EB81591B4399AB0010659C /* CDProfileNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EB81581B4399AB0010659C /* CDProfileNameVC.m */; };
+		9A2AFA6D1C2AADB200F451BE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2AFA6C1C2AADB200F451BE /* SystemConfiguration.framework */; };
+		9A2AFA6F1C2AADBB00F451BE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2AFA6E1C2AADBB00F451BE /* MobileCoreServices.framework */; };
+		9A2AFA711C2AADC200F451BE /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2AFA701C2AADC200F451BE /* CoreTelephony.framework */; };
+		9A2AFA731C2AADCB00F451BE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2AFA721C2AADCB00F451BE /* CoreLocation.framework */; };
+		9A2AFA751C2AB1CE00F451BE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2AFA741C2AB1CE00F451BE /* AVFoundation.framework */; };
+		9A2AFA771C2AB1EA00F451BE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2AFA761C2AB1EA00F451BE /* MediaPlayer.framework */; };
+		9A2AFA791C2AB21100F451BE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2AFA781C2AB21100F451BE /* QuartzCore.framework */; };
+		9A2AFA7B1C2AB21E00F451BE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2AFA7A1C2AB21E00F451BE /* Security.framework */; };
+		9A2AFA7D1C2AB22500F451BE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2AFA7C1C2AB22500F451BE /* StoreKit.framework */; };
+		9A2AFA7F1C2AB23400F451BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2AFA7E1C2AB23400F451BE /* UIKit.framework */; };
+		9AD85BB91C21666B006A35C1 /* CYLTabBarControllerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD85BB81C21666B006A35C1 /* CYLTabBarControllerConfig.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		906327D31C508DD200B69415 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 906327CF1C508DD100B69415 /* LeanChatLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7073F9461B1467F5006F2692;
+			remoteInfo = LeanChatLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A71AD2EA525F79828723CA0 /* Pods-LeanChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeanChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeanChat/Pods-LeanChat.release.xcconfig"; sourceTree = "<group>"; };
+		700E6A131B3D2B4E00675021 /* LZPushManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZPushManager.h; sourceTree = "<group>"; };
+		700E6A141B3D2B4E00675021 /* LZPushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZPushManager.m; sourceTree = "<group>"; };
+		703B392C1B74890100E649DC /* CDSNSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDSNSView.h; sourceTree = "<group>"; };
+		703B392D1B74890100E649DC /* CDSNSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDSNSView.m; sourceTree = "<group>"; };
+		7073FC171B147048006F2692 /* LeanChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeanChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7073FC1B1B147048006F2692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7073FC1C1B147048006F2692 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7073FC271B147048006F2692 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7073FC421B14718C006F2692 /* CDBaseNavC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseNavC.h; sourceTree = "<group>"; };
+		7073FC431B14718C006F2692 /* CDBaseNavC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseNavC.m; sourceTree = "<group>"; };
+		7073FC461B14718C006F2692 /* CDBaseTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseTableVC.h; sourceTree = "<group>"; };
+		7073FC471B14718C006F2692 /* CDBaseTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseTableVC.m; sourceTree = "<group>"; };
+		7073FC481B14718C006F2692 /* CDBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseVC.h; sourceTree = "<group>"; };
+		7073FC491B14718C006F2692 /* CDBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseVC.m; sourceTree = "<group>"; };
+		7073FC4A1B14718C006F2692 /* CDWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDWebViewVC.h; sourceTree = "<group>"; };
+		7073FC4B1B14718C006F2692 /* CDWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDWebViewVC.m; sourceTree = "<group>"; };
+		7073FC4D1B14718C006F2692 /* CDChatVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDChatVC.h; sourceTree = "<group>"; };
+		7073FC4E1B14718C006F2692 /* CDChatVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDChatVC.m; sourceTree = "<group>"; };
+		7073FC4F1B14718C006F2692 /* CDConvsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvsVC.h; sourceTree = "<group>"; };
+		7073FC501B14718C006F2692 /* CDConvsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvsVC.m; sourceTree = "<group>"; };
+		7073FC531B14718C006F2692 /* CDAddMemberVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAddMemberVC.h; sourceTree = "<group>"; };
+		7073FC541B14718C006F2692 /* CDAddMemberVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAddMemberVC.m; sourceTree = "<group>"; };
+		7073FC551B14718C006F2692 /* CDConvDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvDetailVC.h; sourceTree = "<group>"; };
+		7073FC561B14718C006F2692 /* CDConvDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvDetailVC.m; sourceTree = "<group>"; };
+		7073FC571B14718C006F2692 /* CDConvNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvNameVC.h; sourceTree = "<group>"; };
+		7073FC581B14718C006F2692 /* CDConvNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvNameVC.m; sourceTree = "<group>"; };
+		7073FC591B14718C006F2692 /* CDConvNameVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDConvNameVC.xib; sourceTree = "<group>"; };
+		7073FC5A1B14718C006F2692 /* CDConvReportAbuseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvReportAbuseVC.h; sourceTree = "<group>"; };
+		7073FC5B1B14718C006F2692 /* CDConvReportAbuseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvReportAbuseVC.m; sourceTree = "<group>"; };
+		7073FC5C1B14718C006F2692 /* CDGroupedConvListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDGroupedConvListVC.h; sourceTree = "<group>"; };
+		7073FC5D1B14718C006F2692 /* CDGroupedConvListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDGroupedConvListVC.m; sourceTree = "<group>"; };
+		7073FC601B14718C006F2692 /* CDEntryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEntryVC.h; sourceTree = "<group>"; };
+		7073FC611B14718C006F2692 /* CDEntryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEntryVC.m; sourceTree = "<group>"; };
+		7073FC621B14718C006F2692 /* CDLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLoginVC.h; sourceTree = "<group>"; };
+		7073FC631B14718C006F2692 /* CDLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDLoginVC.m; sourceTree = "<group>"; };
+		7073FC641B14718C006F2692 /* CDRegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRegisterVC.h; sourceTree = "<group>"; };
+		7073FC651B14718C006F2692 /* CDRegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRegisterVC.m; sourceTree = "<group>"; };
+		7073FC671B14718C006F2692 /* CDAddFriendVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAddFriendVC.h; sourceTree = "<group>"; };
+		7073FC681B14718C006F2692 /* CDAddFriendVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAddFriendVC.m; sourceTree = "<group>"; };
+		7073FC691B14718C006F2692 /* CDAddFriendVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDAddFriendVC.xib; sourceTree = "<group>"; };
+		7073FC6A1B14718C006F2692 /* CDFriendListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDFriendListVC.h; sourceTree = "<group>"; };
+		7073FC6B1B14718C006F2692 /* CDFriendListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDFriendListVC.m; sourceTree = "<group>"; };
+		7073FC6D1B14718C006F2692 /* CDNewFriendVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNewFriendVC.h; sourceTree = "<group>"; };
+		7073FC6E1B14718C006F2692 /* CDNewFriendVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNewFriendVC.m; sourceTree = "<group>"; };
+		7073FC701B14718C006F2692 /* CDProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDProfileVC.h; sourceTree = "<group>"; };
+		7073FC711B14718C006F2692 /* CDProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDProfileVC.m; sourceTree = "<group>"; };
+		7073FC741B14718C006F2692 /* CDUserInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUserInfoVC.h; sourceTree = "<group>"; };
+		7073FC751B14718C006F2692 /* CDUserInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUserInfoVC.m; sourceTree = "<group>"; };
+		7073FC771B14718C006F2692 /* AVIMCustomMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVIMCustomMessage.h; sourceTree = "<group>"; };
+		7073FC781B14718C006F2692 /* AVIMCustomMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVIMCustomMessage.m; sourceTree = "<group>"; };
+		7073FC7A1B14718C006F2692 /* CDAbuseReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAbuseReport.h; sourceTree = "<group>"; };
+		7073FC7B1B14718C006F2692 /* CDAbuseReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAbuseReport.m; sourceTree = "<group>"; };
+		7073FC7C1B14718C006F2692 /* CDAddRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAddRequest.h; sourceTree = "<group>"; };
+		7073FC7D1B14718C006F2692 /* CDAddRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAddRequest.m; sourceTree = "<group>"; };
+		7073FC7E1B14718C006F2692 /* CDUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUser.h; sourceTree = "<group>"; };
+		7073FC7F1B14718C006F2692 /* CDUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUser.m; sourceTree = "<group>"; };
+		7073FC8D1B14718C006F2692 /* CDBadgeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBadgeLabel.h; sourceTree = "<group>"; };
+		7073FC8E1B14718C006F2692 /* CDBadgeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBadgeLabel.m; sourceTree = "<group>"; };
+		7073FC8F1B14718C006F2692 /* CDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDButton.h; sourceTree = "<group>"; };
+		7073FC901B14718C006F2692 /* CDButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDButton.m; sourceTree = "<group>"; };
+		7073FC951B14718C006F2692 /* CDEntryActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEntryActionButton.h; sourceTree = "<group>"; };
+		7073FC961B14718C006F2692 /* CDEntryActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEntryActionButton.m; sourceTree = "<group>"; };
+		7073FC971B14718C006F2692 /* CDEntryBottomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEntryBottomButton.h; sourceTree = "<group>"; };
+		7073FC981B14718C006F2692 /* CDEntryBottomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEntryBottomButton.m; sourceTree = "<group>"; };
+		7073FC991B14718C006F2692 /* CDImageLabelTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDImageLabelTableCell.h; sourceTree = "<group>"; };
+		7073FC9A1B14718C006F2692 /* CDImageLabelTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDImageLabelTableCell.m; sourceTree = "<group>"; };
+		7073FC9B1B14718C006F2692 /* CDImageLabelTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDImageLabelTableCell.xib; sourceTree = "<group>"; };
+		7073FC9C1B14718C006F2692 /* CDLabelButtonTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLabelButtonTableCell.h; sourceTree = "<group>"; };
+		7073FC9D1B14718C006F2692 /* CDLabelButtonTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDLabelButtonTableCell.m; sourceTree = "<group>"; };
+		7073FC9E1B14718C006F2692 /* CDLabelButtonTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDLabelButtonTableCell.xib; sourceTree = "<group>"; };
+		7073FC9F1B14718C006F2692 /* CDPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPopMenu.h; sourceTree = "<group>"; };
+		7073FCA01B14718C006F2692 /* CDPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPopMenu.m; sourceTree = "<group>"; };
+		7073FCA11B14718C006F2692 /* CDPopMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPopMenuItem.h; sourceTree = "<group>"; };
+		7073FCA21B14718C006F2692 /* CDPopMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPopMenuItem.m; sourceTree = "<group>"; };
+		7073FCA31B14718C006F2692 /* CDPopMenuItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPopMenuItemCell.h; sourceTree = "<group>"; };
+		7073FCA41B14718C006F2692 /* CDPopMenuItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPopMenuItemCell.m; sourceTree = "<group>"; };
+		7073FCA51B14718C006F2692 /* CDResizableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDResizableButton.h; sourceTree = "<group>"; };
+		7073FCA61B14718C006F2692 /* CDResizableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDResizableButton.m; sourceTree = "<group>"; };
+		7073FCA71B14718C006F2692 /* CDTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDTextField.h; sourceTree = "<group>"; };
+		7073FCA81B14718C006F2692 /* CDTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTextField.m; sourceTree = "<group>"; };
+		7073FCD91B1471A4006F2692 /* CDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAppDelegate.h; sourceTree = "<group>"; };
+		7073FCDA1B1471A4006F2692 /* CDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAppDelegate.m; sourceTree = "<group>"; };
+		7073FCDC1B1471BF006F2692 /* LeanChat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeanChat-Prefix.pch"; sourceTree = "<group>"; };
+		7087E7751B78B39A003641E2 /* CDPhoneRegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPhoneRegisterVC.h; sourceTree = "<group>"; };
+		7087E7761B78B39A003641E2 /* CDPhoneRegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPhoneRegisterVC.m; sourceTree = "<group>"; };
+		7087E77C1B78BF34003641E2 /* CDEntryBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEntryBaseVC.h; sourceTree = "<group>"; };
+		7087E77D1B78BF34003641E2 /* CDEntryBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEntryBaseVC.m; sourceTree = "<group>"; };
+		708DF46F1B41A9D20047C994 /* CDSelectMemberVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDSelectMemberVC.h; sourceTree = "<group>"; };
+		708DF4701B41A9D20047C994 /* CDSelectMemberVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDSelectMemberVC.m; sourceTree = "<group>"; };
+		709233091B4522B100E2D1F5 /* CDCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDCommon.h; sourceTree = "<group>"; };
+		7092330B1B45299A00E2D1F5 /* CDSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDSettingVC.h; sourceTree = "<group>"; };
+		7092330C1B45299A00E2D1F5 /* CDSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDSettingVC.m; sourceTree = "<group>"; };
+		70B1C5191B413E1500DCEC8D /* MCMutipleSectionTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMutipleSectionTC.m; sourceTree = "<group>"; };
+		70B1C51A1B413E1500DCEC8D /* MCMutipleSectionTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMutipleSectionTC.h; sourceTree = "<group>"; };
+		70B1C51C1B41430500DCEC8D /* MCPhotographyHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPhotographyHelper.h; sourceTree = "<group>"; };
+		70B1C51D1B41430500DCEC8D /* MCPhotographyHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPhotographyHelper.m; sourceTree = "<group>"; };
+		70DC7DAA1B2F531F0047B7AB /* CDCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDCacheManager.h; sourceTree = "<group>"; };
+		70DC7DAB1B2F531F0047B7AB /* CDCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCacheManager.m; sourceTree = "<group>"; };
+		70DC7DAC1B2F531F0047B7AB /* CDIMService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIMService.h; sourceTree = "<group>"; };
+		70DC7DAD1B2F531F0047B7AB /* CDIMService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIMService.m; sourceTree = "<group>"; };
+		70DC7DAE1B2F531F0047B7AB /* CDUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUserManager.h; sourceTree = "<group>"; };
+		70DC7DAF1B2F531F0047B7AB /* CDUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUserManager.m; sourceTree = "<group>"; };
+		70DC7DB01B2F531F0047B7AB /* CDUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUtils.h; sourceTree = "<group>"; };
+		70DC7DB11B2F531F0047B7AB /* CDUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUtils.m; sourceTree = "<group>"; };
+		70EB81571B4399AB0010659C /* CDProfileNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDProfileNameVC.h; sourceTree = "<group>"; };
+		70EB81581B4399AB0010659C /* CDProfileNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDProfileNameVC.m; sourceTree = "<group>"; };
+		906327CF1C508DD100B69415 /* LeanChatLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LeanChatLib.xcodeproj; path = ../LeanChatLib/LeanChatLib.xcodeproj; sourceTree = "<group>"; };
+		91EC9DF56C410F2764E79F62 /* Pods-LeanChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeanChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeanChat/Pods-LeanChat.debug.xcconfig"; sourceTree = "<group>"; };
+		9A2AFA6C1C2AADB200F451BE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9A2AFA6E1C2AADBB00F451BE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		9A2AFA701C2AADC200F451BE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		9A2AFA721C2AADCB00F451BE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9A2AFA741C2AB1CE00F451BE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9A2AFA761C2AB1EA00F451BE /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		9A2AFA781C2AB21100F451BE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9A2AFA7A1C2AB21E00F451BE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9A2AFA7C1C2AB22500F451BE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9A2AFA7E1C2AB23400F451BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9AD85BB71C21666B006A35C1 /* CYLTabBarControllerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLTabBarControllerConfig.h; sourceTree = "<group>"; };
+		9AD85BB81C21666B006A35C1 /* CYLTabBarControllerConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLTabBarControllerConfig.m; sourceTree = "<group>"; };
+		EF79D434DB9DF2EFE3DD51B2 /* libPods-LeanChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LeanChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7073FC141B147048006F2692 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A2AFA7F1C2AB23400F451BE /* UIKit.framework in Frameworks */,
+				9A2AFA6D1C2AADB200F451BE /* SystemConfiguration.framework in Frameworks */,
+				9A2AFA7D1C2AB22500F451BE /* StoreKit.framework in Frameworks */,
+				9A2AFA7B1C2AB21E00F451BE /* Security.framework in Frameworks */,
+				9A2AFA791C2AB21100F451BE /* QuartzCore.framework in Frameworks */,
+				9A2AFA6F1C2AADBB00F451BE /* MobileCoreServices.framework in Frameworks */,
+				9A2AFA771C2AB1EA00F451BE /* MediaPlayer.framework in Frameworks */,
+				9A2AFA751C2AB1CE00F451BE /* AVFoundation.framework in Frameworks */,
+				9A2AFA731C2AADCB00F451BE /* CoreLocation.framework in Frameworks */,
+				9A2AFA711C2AADC200F451BE /* CoreTelephony.framework in Frameworks */,
+				1FAD25EBE59E07248BD0F7D5 /* libPods-LeanChat.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		700E6A121B3D2B4E00675021 /* LZPushManager */ = {
+			isa = PBXGroup;
+			children = (
+				700E6A131B3D2B4E00675021 /* LZPushManager.h */,
+				700E6A141B3D2B4E00675021 /* LZPushManager.m */,
+			);
+			path = LZPushManager;
+			sourceTree = "<group>";
+		};
+		706780071B2363C5002F1413 /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				700E6A121B3D2B4E00675021 /* LZPushManager */,
+			);
+			path = vendor;
+			sourceTree = "<group>";
+		};
+		7073FC0E1B147048006F2692 = {
+			isa = PBXGroup;
+			children = (
+				906327CF1C508DD100B69415 /* LeanChatLib.xcodeproj */,
+				7073FC191B147048006F2692 /* LeanChat */,
+				7073FC181B147048006F2692 /* Products */,
+				D35BDE7D616EEF87BC0C5FA0 /* Pods */,
+				B215B044676D1B59F414465D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7073FC181B147048006F2692 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7073FC171B147048006F2692 /* LeanChat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7073FC191B147048006F2692 /* LeanChat */ = {
+			isa = PBXGroup;
+			children = (
+				7073FCD91B1471A4006F2692 /* CDAppDelegate.h */,
+				7073FCDA1B1471A4006F2692 /* CDAppDelegate.m */,
+				709233091B4522B100E2D1F5 /* CDCommon.h */,
+				706780071B2363C5002F1413 /* vendor */,
+				7073FC401B14718C006F2692 /* controllers */,
+				7073FC761B14718C006F2692 /* models */,
+				70DC7DA91B2F531F0047B7AB /* manager */,
+				7073FC8C1B14718C006F2692 /* views */,
+				7073FC271B147048006F2692 /* Images.xcassets */,
+				9ACCE5131C2FFA1600D98916 /* Tool */,
+				7073FC1A1B147048006F2692 /* Supporting Files */,
+			);
+			path = LeanChat;
+			sourceTree = "<group>";
+		};
+		7073FC1A1B147048006F2692 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7073FCDC1B1471BF006F2692 /* LeanChat-Prefix.pch */,
+				7073FC1B1B147048006F2692 /* Info.plist */,
+				7073FC1C1B147048006F2692 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7073FC401B14718C006F2692 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7073FC411B14718C006F2692 /* base */,
+				7073FC4C1B14718C006F2692 /* chat */,
+				7073FC521B14718C006F2692 /* conv */,
+				7073FC5F1B14718C006F2692 /* entry */,
+				7073FC661B14718C006F2692 /* friend */,
+				7073FC6F1B14718C006F2692 /* profile */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		7073FC411B14718C006F2692 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				9AD85BB71C21666B006A35C1 /* CYLTabBarControllerConfig.h */,
+				9AD85BB81C21666B006A35C1 /* CYLTabBarControllerConfig.m */,
+				7073FC421B14718C006F2692 /* CDBaseNavC.h */,
+				7073FC431B14718C006F2692 /* CDBaseNavC.m */,
+				7073FC461B14718C006F2692 /* CDBaseTableVC.h */,
+				7073FC471B14718C006F2692 /* CDBaseTableVC.m */,
+				7073FC481B14718C006F2692 /* CDBaseVC.h */,
+				7073FC491B14718C006F2692 /* CDBaseVC.m */,
+				7073FC4A1B14718C006F2692 /* CDWebViewVC.h */,
+				7073FC4B1B14718C006F2692 /* CDWebViewVC.m */,
+				70B1C5191B413E1500DCEC8D /* MCMutipleSectionTC.m */,
+				70B1C51A1B413E1500DCEC8D /* MCMutipleSectionTC.h */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		7073FC4C1B14718C006F2692 /* chat */ = {
+			isa = PBXGroup;
+			children = (
+				7073FC4D1B14718C006F2692 /* CDChatVC.h */,
+				7073FC4E1B14718C006F2692 /* CDChatVC.m */,
+				7073FC4F1B14718C006F2692 /* CDConvsVC.h */,
+				7073FC501B14718C006F2692 /* CDConvsVC.m */,
+			);
+			path = chat;
+			sourceTree = "<group>";
+		};
+		7073FC521B14718C006F2692 /* conv */ = {
+			isa = PBXGroup;
+			children = (
+				7073FC531B14718C006F2692 /* CDAddMemberVC.h */,
+				7073FC541B14718C006F2692 /* CDAddMemberVC.m */,
+				708DF46F1B41A9D20047C994 /* CDSelectMemberVC.h */,
+				708DF4701B41A9D20047C994 /* CDSelectMemberVC.m */,
+				7073FC551B14718C006F2692 /* CDConvDetailVC.h */,
+				7073FC561B14718C006F2692 /* CDConvDetailVC.m */,
+				7073FC571B14718C006F2692 /* CDConvNameVC.h */,
+				7073FC581B14718C006F2692 /* CDConvNameVC.m */,
+				7073FC591B14718C006F2692 /* CDConvNameVC.xib */,
+				7073FC5A1B14718C006F2692 /* CDConvReportAbuseVC.h */,
+				7073FC5B1B14718C006F2692 /* CDConvReportAbuseVC.m */,
+				7073FC5C1B14718C006F2692 /* CDGroupedConvListVC.h */,
+				7073FC5D1B14718C006F2692 /* CDGroupedConvListVC.m */,
+			);
+			path = conv;
+			sourceTree = "<group>";
+		};
+		7073FC5F1B14718C006F2692 /* entry */ = {
+			isa = PBXGroup;
+			children = (
+				7087E77C1B78BF34003641E2 /* CDEntryBaseVC.h */,
+				7087E77D1B78BF34003641E2 /* CDEntryBaseVC.m */,
+				7073FC601B14718C006F2692 /* CDEntryVC.h */,
+				7073FC611B14718C006F2692 /* CDEntryVC.m */,
+				7073FC621B14718C006F2692 /* CDLoginVC.h */,
+				7073FC631B14718C006F2692 /* CDLoginVC.m */,
+				7073FC641B14718C006F2692 /* CDRegisterVC.h */,
+				7073FC651B14718C006F2692 /* CDRegisterVC.m */,
+				7087E7751B78B39A003641E2 /* CDPhoneRegisterVC.h */,
+				7087E7761B78B39A003641E2 /* CDPhoneRegisterVC.m */,
+			);
+			path = entry;
+			sourceTree = "<group>";
+		};
+		7073FC661B14718C006F2692 /* friend */ = {
+			isa = PBXGroup;
+			children = (
+				7073FC671B14718C006F2692 /* CDAddFriendVC.h */,
+				7073FC681B14718C006F2692 /* CDAddFriendVC.m */,
+				7073FC691B14718C006F2692 /* CDAddFriendVC.xib */,
+				7073FC6A1B14718C006F2692 /* CDFriendListVC.h */,
+				7073FC6B1B14718C006F2692 /* CDFriendListVC.m */,
+				7073FC6D1B14718C006F2692 /* CDNewFriendVC.h */,
+				7073FC6E1B14718C006F2692 /* CDNewFriendVC.m */,
+			);
+			path = friend;
+			sourceTree = "<group>";
+		};
+		7073FC6F1B14718C006F2692 /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				7092330B1B45299A00E2D1F5 /* CDSettingVC.h */,
+				7092330C1B45299A00E2D1F5 /* CDSettingVC.m */,
+				7073FC701B14718C006F2692 /* CDProfileVC.h */,
+				7073FC711B14718C006F2692 /* CDProfileVC.m */,
+				70EB81571B4399AB0010659C /* CDProfileNameVC.h */,
+				70EB81581B4399AB0010659C /* CDProfileNameVC.m */,
+				7073FC741B14718C006F2692 /* CDUserInfoVC.h */,
+				7073FC751B14718C006F2692 /* CDUserInfoVC.m */,
+			);
+			path = profile;
+			sourceTree = "<group>";
+		};
+		7073FC761B14718C006F2692 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				7073FC791B14718C006F2692 /* avobject */,
+				7073FC771B14718C006F2692 /* AVIMCustomMessage.h */,
+				7073FC781B14718C006F2692 /* AVIMCustomMessage.m */,
+				7073FC7E1B14718C006F2692 /* CDUser.h */,
+				7073FC7F1B14718C006F2692 /* CDUser.m */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		7073FC791B14718C006F2692 /* avobject */ = {
+			isa = PBXGroup;
+			children = (
+				7073FC7A1B14718C006F2692 /* CDAbuseReport.h */,
+				7073FC7B1B14718C006F2692 /* CDAbuseReport.m */,
+				7073FC7C1B14718C006F2692 /* CDAddRequest.h */,
+				7073FC7D1B14718C006F2692 /* CDAddRequest.m */,
+			);
+			path = avobject;
+			sourceTree = "<group>";
+		};
+		7073FC8C1B14718C006F2692 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				7073FC8D1B14718C006F2692 /* CDBadgeLabel.h */,
+				7073FC8E1B14718C006F2692 /* CDBadgeLabel.m */,
+				7073FC8F1B14718C006F2692 /* CDButton.h */,
+				7073FC901B14718C006F2692 /* CDButton.m */,
+				7073FC951B14718C006F2692 /* CDEntryActionButton.h */,
+				7073FC961B14718C006F2692 /* CDEntryActionButton.m */,
+				7073FC971B14718C006F2692 /* CDEntryBottomButton.h */,
+				7073FC981B14718C006F2692 /* CDEntryBottomButton.m */,
+				703B392C1B74890100E649DC /* CDSNSView.h */,
+				703B392D1B74890100E649DC /* CDSNSView.m */,
+				7073FC991B14718C006F2692 /* CDImageLabelTableCell.h */,
+				7073FC9A1B14718C006F2692 /* CDImageLabelTableCell.m */,
+				7073FC9B1B14718C006F2692 /* CDImageLabelTableCell.xib */,
+				7073FC9C1B14718C006F2692 /* CDLabelButtonTableCell.h */,
+				7073FC9D1B14718C006F2692 /* CDLabelButtonTableCell.m */,
+				7073FC9E1B14718C006F2692 /* CDLabelButtonTableCell.xib */,
+				7073FC9F1B14718C006F2692 /* CDPopMenu.h */,
+				7073FCA01B14718C006F2692 /* CDPopMenu.m */,
+				7073FCA11B14718C006F2692 /* CDPopMenuItem.h */,
+				7073FCA21B14718C006F2692 /* CDPopMenuItem.m */,
+				7073FCA31B14718C006F2692 /* CDPopMenuItemCell.h */,
+				7073FCA41B14718C006F2692 /* CDPopMenuItemCell.m */,
+				7073FCA51B14718C006F2692 /* CDResizableButton.h */,
+				7073FCA61B14718C006F2692 /* CDResizableButton.m */,
+				7073FCA71B14718C006F2692 /* CDTextField.h */,
+				7073FCA81B14718C006F2692 /* CDTextField.m */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		70DC7DA91B2F531F0047B7AB /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				70DC7DAA1B2F531F0047B7AB /* CDCacheManager.h */,
+				70DC7DAB1B2F531F0047B7AB /* CDCacheManager.m */,
+				70DC7DAC1B2F531F0047B7AB /* CDIMService.h */,
+				70DC7DAD1B2F531F0047B7AB /* CDIMService.m */,
+				70DC7DAE1B2F531F0047B7AB /* CDUserManager.h */,
+				70DC7DAF1B2F531F0047B7AB /* CDUserManager.m */,
+				70DC7DB01B2F531F0047B7AB /* CDUtils.h */,
+				70DC7DB11B2F531F0047B7AB /* CDUtils.m */,
+				70B1C51C1B41430500DCEC8D /* MCPhotographyHelper.h */,
+				70B1C51D1B41430500DCEC8D /* MCPhotographyHelper.m */,
+			);
+			path = manager;
+			sourceTree = "<group>";
+		};
+		906327D01C508DD100B69415 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				906327D41C508DD200B69415 /* LeanChatLib.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9ACCE5131C2FFA1600D98916 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		B215B044676D1B59F414465D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A2AFA7E1C2AB23400F451BE /* UIKit.framework */,
+				9A2AFA7C1C2AB22500F451BE /* StoreKit.framework */,
+				9A2AFA7A1C2AB21E00F451BE /* Security.framework */,
+				9A2AFA781C2AB21100F451BE /* QuartzCore.framework */,
+				9A2AFA761C2AB1EA00F451BE /* MediaPlayer.framework */,
+				9A2AFA741C2AB1CE00F451BE /* AVFoundation.framework */,
+				9A2AFA721C2AADCB00F451BE /* CoreLocation.framework */,
+				9A2AFA701C2AADC200F451BE /* CoreTelephony.framework */,
+				9A2AFA6E1C2AADBB00F451BE /* MobileCoreServices.framework */,
+				9A2AFA6C1C2AADB200F451BE /* SystemConfiguration.framework */,
+				EF79D434DB9DF2EFE3DD51B2 /* libPods-LeanChat.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35BDE7D616EEF87BC0C5FA0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91EC9DF56C410F2764E79F62 /* Pods-LeanChat.debug.xcconfig */,
+				4A71AD2EA525F79828723CA0 /* Pods-LeanChat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7073FC161B147048006F2692 /* LeanChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7073FC3A1B147048006F2692 /* Build configuration list for PBXNativeTarget "LeanChat" */;
+			buildPhases = (
+				11858C5D7704F7D6EED86CD9 /* Check Pods Manifest.lock */,
+				7073FC131B147048006F2692 /* Sources */,
+				7073FC141B147048006F2692 /* Frameworks */,
+				7073FC151B147048006F2692 /* Resources */,
+				1CFC146C67C803FF77A8A386 /* Copy Pods Resources */,
+				706C81B01B4296F90069E52E /* Build Number */,
+				18111F517D6015622C73B46E /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LeanChat;
+			productName = LeanChat;
+			productReference = 7073FC171B147048006F2692 /* LeanChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7073FC0F1B147048006F2692 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "lzwjava@LeanCloud QQ: 651142978";
+				TargetAttributes = {
+					7073FC161B147048006F2692 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = HY2JF7VN6E;
+					};
+				};
+			};
+			buildConfigurationList = 7073FC121B147048006F2692 /* Build configuration list for PBXProject "LeanChat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7073FC0E1B147048006F2692;
+			productRefGroup = 7073FC181B147048006F2692 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 906327D01C508DD100B69415 /* Products */;
+					ProjectRef = 906327CF1C508DD100B69415 /* LeanChatLib.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				7073FC161B147048006F2692 /* LeanChat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		906327D41C508DD200B69415 /* LeanChatLib.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = LeanChatLib.framework;
+			remoteRef = 906327D31C508DD200B69415 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7073FC151B147048006F2692 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7073FCB31B14718C006F2692 /* CDConvNameVC.xib in Resources */,
+				7073FCBB1B14718C006F2692 /* CDAddFriendVC.xib in Resources */,
+				7073FCD11B14718C006F2692 /* CDImageLabelTableCell.xib in Resources */,
+				7073FCD31B14718C006F2692 /* CDLabelButtonTableCell.xib in Resources */,
+				7073FC281B147048006F2692 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11858C5D7704F7D6EED86CD9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		18111F517D6015622C73B46E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LeanChat/Pods-LeanChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1CFC146C67C803FF77A8A386 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LeanChat/Pods-LeanChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		706C81B01B4296F90069E52E /* Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $CONFIGURATION == Release ]; then\necho \"Bumping build number...\"\nplist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n# increment the build number (ie 115 to 116)\nbuildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number in $plist\"\nexit 2\nfi\n\nbuildnum=$(expr $buildnum + 1)\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\necho \"Bumped build number to $buildnum\"\n\nelse\necho $CONFIGURATION \" build - Not bumping build number.\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7073FC131B147048006F2692 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70DC7DB31B2F531F0047B7AB /* CDIMService.m in Sources */,
+				70DC7DB21B2F531F0047B7AB /* CDCacheManager.m in Sources */,
+				7073FCB71B14718C006F2692 /* CDEntryVC.m in Sources */,
+				703B392E1B74890100E649DC /* CDSNSView.m in Sources */,
+				7073FCD71B14718C006F2692 /* CDResizableButton.m in Sources */,
+				7087E77E1B78BF34003641E2 /* CDEntryBaseVC.m in Sources */,
+				7073FC1D1B147048006F2692 /* main.m in Sources */,
+				7073FCAD1B14718C006F2692 /* CDWebViewVC.m in Sources */,
+				7073FCD21B14718C006F2692 /* CDLabelButtonTableCell.m in Sources */,
+				70DC7DB41B2F531F0047B7AB /* CDUserManager.m in Sources */,
+				7073FCB81B14718C006F2692 /* CDLoginVC.m in Sources */,
+				7073FCAB1B14718C006F2692 /* CDBaseTableVC.m in Sources */,
+				7073FCD81B14718C006F2692 /* CDTextField.m in Sources */,
+				7073FCCA1B14718C006F2692 /* CDBadgeLabel.m in Sources */,
+				70B1C51B1B413E1500DCEC8D /* MCMutipleSectionTC.m in Sources */,
+				7073FCC31B14718C006F2692 /* CDAbuseReport.m in Sources */,
+				7073FCCB1B14718C006F2692 /* CDButton.m in Sources */,
+				7073FCDB1B1471A4006F2692 /* CDAppDelegate.m in Sources */,
+				7073FCC11B14718C006F2692 /* CDUserInfoVC.m in Sources */,
+				7087E7771B78B39A003641E2 /* CDPhoneRegisterVC.m in Sources */,
+				7073FCD41B14718C006F2692 /* CDPopMenu.m in Sources */,
+				70DC7DB51B2F531F0047B7AB /* CDUtils.m in Sources */,
+				7073FCC21B14718C006F2692 /* AVIMCustomMessage.m in Sources */,
+				7073FCA91B14718C006F2692 /* CDBaseNavC.m in Sources */,
+				7073FCB21B14718C006F2692 /* CDConvNameVC.m in Sources */,
+				7073FCBE1B14718C006F2692 /* CDNewFriendVC.m in Sources */,
+				7073FCD51B14718C006F2692 /* CDPopMenuItem.m in Sources */,
+				7073FCCF1B14718C006F2692 /* CDEntryBottomButton.m in Sources */,
+				700E6A151B3D2B4E00675021 /* LZPushManager.m in Sources */,
+				7073FCD01B14718C006F2692 /* CDImageLabelTableCell.m in Sources */,
+				7073FCBF1B14718C006F2692 /* CDProfileVC.m in Sources */,
+				7073FCB51B14718C006F2692 /* CDGroupedConvListVC.m in Sources */,
+				7073FCB41B14718C006F2692 /* CDConvReportAbuseVC.m in Sources */,
+				7092330D1B45299A00E2D1F5 /* CDSettingVC.m in Sources */,
+				7073FCAE1B14718C006F2692 /* CDChatVC.m in Sources */,
+				708DF4711B41A9D20047C994 /* CDSelectMemberVC.m in Sources */,
+				7073FCC41B14718C006F2692 /* CDAddRequest.m in Sources */,
+				7073FCC51B14718C006F2692 /* CDUser.m in Sources */,
+				7073FCAC1B14718C006F2692 /* CDBaseVC.m in Sources */,
+				7073FCB01B14718C006F2692 /* CDAddMemberVC.m in Sources */,
+				7073FCBC1B14718C006F2692 /* CDFriendListVC.m in Sources */,
+				7073FCD61B14718C006F2692 /* CDPopMenuItemCell.m in Sources */,
+				7073FCBA1B14718C006F2692 /* CDAddFriendVC.m in Sources */,
+				7073FCB11B14718C006F2692 /* CDConvDetailVC.m in Sources */,
+				9AD85BB91C21666B006A35C1 /* CYLTabBarControllerConfig.m in Sources */,
+				70B1C51E1B41430500DCEC8D /* MCPhotographyHelper.m in Sources */,
+				70EB81591B4399AB0010659C /* CDProfileNameVC.m in Sources */,
+				7073FCB91B14718C006F2692 /* CDRegisterVC.m in Sources */,
+				7073FCAF1B14718C006F2692 /* CDConvsVC.m in Sources */,
+				7073FCCE1B14718C006F2692 /* CDEntryActionButton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7073FC381B147048006F2692 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7073FC391B147048006F2692 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7073FC3B1B147048006F2692 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91EC9DF56C410F2764E79F62 /* Pods-LeanChat.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "LeanChat/LeanChat-Prefix.pch";
+				INFOPLIST_FILE = LeanChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LeanChat/vendor/WeChatSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-undefined",
+					dynamic_lookup,
+					"-l\"AFNetworking\"",
+					"-l\"AVOSCloud\"",
+					"-l\"AVOSCloudIM\"",
+					"-l\"DateTools\"",
+					"-l\"FMDB\"",
+					"-l\"FXForms\"",
+					"-l\"JSBadgeView\"",
+					"-l\"LZAlertViewHelper\"",
+					"-l\"LZMembersCell\"",
+					"-l\"LeanChatLib\"",
+					"-l\"LeanCloudFeedback\"",
+					"-l\"LeanCloudSocial\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"OpenShare\"",
+					"-l\"PopMenu\"",
+					"-l\"XHRealTimeBlur\"",
+					"-l\"c++\"",
+					"-l\"iRate\"",
+					"-l\"iVersion\"",
+					"-l\"icucore\"",
+					"-l\"pop\"",
+					"-l\"sqlite3\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MapKit\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.avoscloud.leanchat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		7073FC3C1B147048006F2692 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A71AD2EA525F79828723CA0 /* Pods-LeanChat.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "LeanChat/LeanChat-Prefix.pch";
+				INFOPLIST_FILE = LeanChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LeanChat/vendor/WeChatSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-undefined",
+					dynamic_lookup,
+					"-l\"AFNetworking\"",
+					"-l\"AVOSCloud\"",
+					"-l\"AVOSCloudIM\"",
+					"-l\"DateTools\"",
+					"-l\"FMDB\"",
+					"-l\"FXForms\"",
+					"-l\"JSBadgeView\"",
+					"-l\"LZAlertViewHelper\"",
+					"-l\"LZMembersCell\"",
+					"-l\"LeanChatLib\"",
+					"-l\"LeanCloudFeedback\"",
+					"-l\"LeanCloudSocial\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"OpenShare\"",
+					"-l\"PopMenu\"",
+					"-l\"XHRealTimeBlur\"",
+					"-l\"c++\"",
+					"-l\"iRate\"",
+					"-l\"iVersion\"",
+					"-l\"icucore\"",
+					"-l\"pop\"",
+					"-l\"sqlite3\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MapKit\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.avoscloud.leanchat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7073FC121B147048006F2692 /* Build configuration list for PBXProject "LeanChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7073FC381B147048006F2692 /* Debug */,
+				7073FC391B147048006F2692 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7073FC3A1B147048006F2692 /* Build configuration list for PBXNativeTarget "LeanChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7073FC3B1B147048006F2692 /* Debug */,
+				7073FC3C1B147048006F2692 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7073FC0F1B147048006F2692 /* Project object */;
+}

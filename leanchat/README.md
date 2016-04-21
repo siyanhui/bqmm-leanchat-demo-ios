@@ -3,24 +3,11 @@
 [![CocoaPods](http://img.shields.io/cocoapods/p/LeanChatLib.svg?style=flat)](http://cocoapods.org/?q=LeanChatLib)&nbsp;
 [![Support](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)
 
-![leanchat](https://cloud.githubusercontent.com/assets/5022872/8431636/4eff0aca-1f6d-11e5-8728-f8f450dac380.gif)
- 
-## App Store  
-LeanChat 已经在 App Store 上架，可前往 https://itunes.apple.com/gb/app/leanchat/id943324553 或在 App Store 上搜 LeanChat。
+# LeanChat （表情 mm 特别版）
  
 ## 介绍
-这个示例项目全面展示了 LeanCloud 实时通讯功能的应用，但含杂着许多 UI 代码和其它功能，并不适合快速上手学习，如果你第一次接触 LeanMessage，更推荐 [LeanMessage-Demo](https://github.com/leancloud/LeanMessage-Demo) 项目。等熟悉了之后，可前往 [LeanCloud-Demos](https://github.com/leancloud/leancloud-demos) 挑选你喜欢的 IM 皮肤进行集成。集成的过程中，若遇到疑难问题，不妨再来参考 LeanChat 项目。
-
-## LeanChat 项目构成
-
-* [leanchat-android](https://github.com/leancloud/leanchat-android)，Android 客户端
-* [leanchat-ios](https://github.com/leancloud/leanchat-ios)，iOS 客户端
-* [leanchat-webapp](https://github.com/leancloud/leanchat-webapp)，Web 客户端
-* [leanchat-cloud-code](https://github.com/leancloud/leanchat-cloudcode)，服务端
-
-## 宝贵意见
-
-如果有任何问题，欢迎提 [issue](https://github.com/leancloud/leanchat-ios/issues)，写上你不明白的地方，看到后会尽快给予帮助。
+这个示例项目全面展示了 LeanCloud 实时通讯功能的应用，该版本集成了表情 mm SDK（表情mm SDK是上海似颜绘科技有限公司提供的表情商店SDK, 开发者可以利用此SDK集成丰富的表情。 ）帮助用户在使用实时通信服务的同时，更方便的加入表情功能。
+![表情 mm](https://dn-lhzo7z96.qbox.me/1461217354454)
 
 ## 下载
 请直接点击 Github 上的`Download Zip`，如图所示，这样只下载最新版。如果是 `git clone`，则可能非常慢，因为含杂很大的提交历史。某次测试两者是1.5M:40M。
@@ -239,7 +226,7 @@ ChatListDelegate 增加 configureCell: 与 prepareConversaion: 接口，以便�
 
 ## 部署 LeanChat 需知
 
-如果要部署完整的LeanChat的话，因为该应用有添加好友的功能，请在设置->应用选项中，勾选互相关注选项，以便一方同意的时候，能互相加好友。
+如果要部署完整的 LeanChat的话，因为该应用有添加好友的功能，请在设置->应用选项中，勾选互相关注选项，以便一方同意的时候，能互相加好友。
 
 ![qq20150407-5](https://cloud.githubusercontent.com/assets/5022872/7016645/53f91bb8-dd1b-11e4-8ce0-72312c655094.png)
 

@@ -9,10 +9,6 @@
 这个示例项目全面展示了 LeanCloud 实时通讯功能的应用，该版本集成了表情 mm SDK（表情mm SDK是上海似颜绘科技有限公司提供的表情商店SDK, 开发者可以利用此SDK集成丰富的表情。 ）帮助用户在使用实时通信服务的同时，更方便的加入表情功能。
 ![表情 mm](https://dn-lhzo7z96.qbox.me/1461217354454)
 
-## 宝贵意见
-
-如果有任何问题，欢迎提 [issue](https://github.com/leancloud/leanchat-ios/issues)，写上你不明白的地方，看到后会尽快给予帮助。
-
 ## 下载
 请直接点击 Github 上的`Download Zip`，如图所示，这样只下载最新版。如果是 `git clone`，则可能非常慢，因为含杂很大的提交历史。某次测试两者是1.5M:40M。
 

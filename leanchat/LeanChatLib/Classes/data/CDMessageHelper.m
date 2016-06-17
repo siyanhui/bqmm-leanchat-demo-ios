@@ -96,7 +96,7 @@
     
     return attributedString;
 }
-
+//BQMM集成
 //兼容安卓
 + (void)convertAndroidAttributesToIos:(AVIMTypedMessage *)message {
     id msg_data = message.attributes[@"msg_data"];

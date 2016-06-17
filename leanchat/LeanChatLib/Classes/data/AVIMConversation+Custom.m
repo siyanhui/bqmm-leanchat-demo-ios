@@ -26,7 +26,6 @@
 }
 
 - (void)setUnreadCount:(NSInteger)unreadCount {
-    NSLog(@"aaaaaaaa %d", unreadCount);
     objc_setAssociatedObject(self, @selector(unreadCount), @(unreadCount), OBJC_ASSOCIATION_ASSIGN);
 }
 

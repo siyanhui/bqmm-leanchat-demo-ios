@@ -12,6 +12,7 @@
 #import "XHMessageTableViewCell.h"
 #import "XHMessageStatusView.h"
 
+//BQMM集成
 #import "MMTextView.h"
 #import "MMTextParser+ExtData.h"
 
@@ -152,6 +153,7 @@ static const CGFloat kXHBubbleMessageViewBottomPadding = 8;
 - (void)copied:(id)sender {
     switch (self.messageBubbleView.message.messageMediaType) {
         case XHBubbleMessageMediaTypeText:
+            //BQMM集成
         {
             UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
             NSDictionary *attributes = [self.messageBubbleView.message attributes];
@@ -238,6 +240,7 @@ static const CGFloat kXHBubbleMessageViewBottomPadding = 8;
     }
 }
 
+//BQMM集成
 - (void)configureMessageBubbleViewWithMessage:(id<XHMessageModel>)message {
     XHBubbleMessageMediaType currentMediaType = message.messageMediaType;
     for (UIGestureRecognizer *gesTureRecognizer in self.messageBubbleView.bubbleImageView.gestureRecognizers) {

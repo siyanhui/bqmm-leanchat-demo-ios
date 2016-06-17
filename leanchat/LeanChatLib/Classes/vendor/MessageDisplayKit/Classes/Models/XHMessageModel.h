@@ -44,7 +44,7 @@ typedef NS_ENUM(NSInteger, XHMessageStatus){
 
 - (UIImage *)avator;
 - (NSString *)avatorUrl;
-
+//BQMM集成
 - (NSDictionary *)attributes;
 
 - (XHBubbleMessageMediaType)messageMediaType;

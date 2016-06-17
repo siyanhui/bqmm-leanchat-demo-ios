@@ -26,6 +26,7 @@
  */
 - (NSAttributedString *)attributedStringWithMessage:(AVIMTypedMessage *)message conversation:(AVIMConversation *)conversation;
 
+//BQMM集成
 + (void)convertAndroidAttributesToIos:(AVIMTypedMessage *)message;
 
 @end

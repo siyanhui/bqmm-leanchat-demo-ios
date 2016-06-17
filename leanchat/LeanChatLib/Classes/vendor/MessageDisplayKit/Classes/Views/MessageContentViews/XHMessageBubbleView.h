@@ -34,7 +34,7 @@
 #define kXHMessageBubbleDisplayMaxLine 200
 
 #define kXHTextLineSpacing 3.0
-
+//BQMM集成
 @class MMTextView;
 
 @interface XHMessageBubbleView : UIView
@@ -47,6 +47,7 @@
 /**
  *  自定义显示文本消息控件，子类化的原因有两个，第一个是屏蔽Menu的显示。第二是传递手势到下一层，因为文本需要双击的手势
  */
+//BQMM集成
 @property (nonatomic, weak, readonly) MMTextView *displayTextView;
 
 /**

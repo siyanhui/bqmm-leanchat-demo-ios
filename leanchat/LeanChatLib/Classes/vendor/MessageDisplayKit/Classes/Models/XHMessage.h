@@ -51,6 +51,7 @@
 
 @property (nonatomic,assign) XHMessageStatus status;
 
+//BQMM集成
 @property (nonatomic, strong) NSDictionary *attributes;
 
 /*!

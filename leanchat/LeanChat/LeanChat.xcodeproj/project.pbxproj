@@ -527,13 +527,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7073FC3A1B147048006F2692 /* Build configuration list for PBXNativeTarget "LeanChat" */;
 			buildPhases = (
-				11858C5D7704F7D6EED86CD9 /* Check Pods Manifest.lock */,
+				11858C5D7704F7D6EED86CD9 /* [CP] Check Pods Manifest.lock */,
 				7073FC131B147048006F2692 /* Sources */,
 				7073FC141B147048006F2692 /* Frameworks */,
 				7073FC151B147048006F2692 /* Resources */,
-				1CFC146C67C803FF77A8A386 /* Copy Pods Resources */,
+				1CFC146C67C803FF77A8A386 /* [CP] Copy Pods Resources */,
 				706C81B01B4296F90069E52E /* Build Number */,
-				18111F517D6015622C73B46E /* Embed Pods Frameworks */,
+				18111F517D6015622C73B46E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -609,14 +609,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		11858C5D7704F7D6EED86CD9 /* Check Pods Manifest.lock */ = {
+		11858C5D7704F7D6EED86CD9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,14 +624,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		18111F517D6015622C73B46E /* Embed Pods Frameworks */ = {
+		18111F517D6015622C73B46E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -639,14 +639,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LeanChat/Pods-LeanChat-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1CFC146C67C803FF77A8A386 /* Copy Pods Resources */ = {
+		1CFC146C67C803FF77A8A386 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

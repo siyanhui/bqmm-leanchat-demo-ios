@@ -11,14 +11,14 @@
 
 #import "NSString+MessageInputView.h"
 #import "XHMacro.h"
-
+//BQMM集成
 #import <BQMM/BQMM.h>
 
 #define kXHTouchToRecord         @"按住 说话"
 #define kXHTouchToFinish         @"松开 结束"
 
 #define MIN_AUDIO_RECORDING_INTERVAL 1
-
+//BQMM集成
 @interface XHMessageInputView () <UITextViewDelegate, MMEmotionCentreDelegate>
 
 @property (nonatomic, weak, readwrite) XHMessageTextView *inputTextView;
@@ -450,7 +450,7 @@
     _allowsSendMultiMedia = YES;
     
     _messageInputViewStyle = XHMessageInputViewStyleFlat;
-    
+    //BQMM集成
     [MMEmotionCentre defaultCentre].delegate = self;
     [[MMEmotionCentre defaultCentre] shouldShowShotcutPopoverAboveView:_faceSendButton withInput:_inputTextView];
 }
@@ -553,6 +553,7 @@
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     if ([text isEqualToString:@"\n"]) {
         if ([self.delegate respondsToSelector:@selector(didSendTextAction:)]) {
+            //BQMM集成
             [self.delegate didSendTextAction:textView.mmText];
         }
         return NO;
@@ -565,6 +566,7 @@
     return YES;
 }
 
+//BQMM集成  开始
 - (void)textViewDidChange:(UITextView *)textView {
     if (textView.markedTextRange == nil) {
         NSRange selectedRange = textView.selectedRange;
@@ -598,7 +600,7 @@
     self.faceSendButton.selected = NO;
 }
 
-
+//BQMM集成  结束
 @end
 
 

@@ -13,6 +13,7 @@
 #import "XHMessageTableViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
+//BQMM集成
 #import <BQMM/BQMM.h>
 #import "MMTextParser+ExtData.h"
 
@@ -808,6 +809,7 @@ static CGPoint  delayOffset = {0.0};
 #pragma mark - Message Send helper Method
 
 - (void)didSendMessageWithText:(NSString *)text {
+    //BQMM集成
     DLog(@"send text : %@", text);
     if ([self.delegate respondsToSelector:@selector(didSendText:attributes:fromSender:onDate:)]) {
         [self.delegate didSendText:text attributes:nil fromSender:self.messageSender onDate:[NSDate date]];
@@ -991,6 +993,7 @@ static CGPoint  delayOffset = {0.0};
 }
 
 - (void)didSendTextAction:(NSString *)text {
+    //BQMM集成
     NSString *text_ = [text stringByReplacingOccurrencesOfString:@"\a" withString:@""];
     [MMTextParser localParseMMText:text_ completionHandler:^(NSArray *textImgArray) {
         NSDictionary *ext = nil;
@@ -1016,6 +1019,7 @@ static CGPoint  delayOffset = {0.0};
     }];
 }
 
+//BQMM集成
 - (void)didSendMMFaceAction:(MMEmoji *)emoji {
     NSDictionary *ext = @{@"txt_msgType":@"facetype",
                           @"msg_data":[MMTextParser extDataWithEmojiCode:emoji.emojiCode]};
@@ -1032,7 +1036,7 @@ static CGPoint  delayOffset = {0.0};
     self.textViewInputViewType = XHInputViewTypeShareMenu;
     [self layoutOtherMenuViewHiden:NO];
 }
-
+//BQMM集成
 - (void)didSendFaceAction:(BOOL)sendFace {
 //    if (sendFace) {
 //        self.textViewInputViewType = XHInputViewTypeEmotion;

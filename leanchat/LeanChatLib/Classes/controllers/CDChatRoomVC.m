@@ -23,6 +23,7 @@
 #import "CDFailedMessageStore.h"
 #import "AVIMEmotionMessage.h"
 
+//BQMM集成
 #import <BQMM/BQMM.h>
 #import "CDMessageHelper.h"
 
@@ -162,6 +163,7 @@ typedef void (^LCIMErrorBlock)(NSString *messageUUID, NSError *error);
 - (void)multiMediaMessageDidSelectedOnMessage:(id<XHMessageModel>)message atIndexPath:(NSIndexPath *)indexPath onMessageTableViewCell:(XHMessageTableViewCell *)messageTableViewCell {
     UIViewController *disPlayViewController;
     switch (message.messageMediaType) {
+            //BQMM集成  点击大表情消息时的处理
         case XHBubbleMessageMediaTypeText:
         {
             NSDictionary *attributes = [message attributes];
@@ -271,6 +273,7 @@ typedef void (^LCIMErrorBlock)(NSString *messageUUID, NSError *error);
 
 #pragma mark - didSend delegate
 
+//BQMM集成  发送消息回调
 //发送文本消息的回调方法
 - (void)didSendText:(NSString *)text attributes:(NSDictionary *)attributes fromSender:(NSString *)sender onDate:(NSDate *)date {
     if ([CDChatManager manager].client.status != AVIMClientStatusOpened) {
@@ -298,6 +301,7 @@ typedef void (^LCIMErrorBlock)(NSString *messageUUID, NSError *error);
         return;
     }
     AVIMVideoMessage *sendVideoMessage = [AVIMVideoMessage messageWithText:nil attachedFilePath:videoPath attributes:nil];
+    //BQMM集成
     [self sendMessage:sendVideoMessage attributes:nil];
 }
 
@@ -328,6 +332,7 @@ typedef void (^LCIMErrorBlock)(NSString *messageUUID, NSError *error);
     } else {
         NSString *path = [[NSBundle mainBundle] pathForResource:emotion ofType:@"gif"];
         XHMessage *message = [[XHMessage alloc] initWithEmotionPath:path emotionName:emotion sender:sender timestamp:nil];
+        //BQMM集成
         [self sendMessage:message attributes:nil];
         [self finishSendMessageWithBubbleMessageType:XHBubbleMessageMediaTypeEmotion];
     }
@@ -460,6 +465,7 @@ typedef void (^LCIMErrorBlock)(NSString *messageUUID, NSError *error);
                               sender:sender
                               timestamp:nil
                               ];
+        //BQMM集成
         [self sendMessage:message attributes:nil];
     } else {
         [self alert:@"write image to file error"];
@@ -473,15 +479,18 @@ typedef void (^LCIMErrorBlock)(NSString *messageUUID, NSError *error);
                                                        sender:sender
                                                     timestamp:nil
                           ];
+    //BQMM集成
     [self sendMessage:message attributes:nil];
 }
 
 - (void)sendLocationWithLatitude:(double)latitude longitude:(double)longitude address:(NSString *)address {
     CLLocation *location = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
     XHMessage *message = [[XHMessage alloc] initWithLocalPositionPhoto:[UIImage imageNamed:@"Fav_Cell_Loc"] geolocations:nil location:location sender:nil timestamp:nil];
+    //BQMM集成
     [self sendMessage:message attributes:nil];
 }
 
+//BQMM集成
 - (AVIMTypedMessage *)getAVIMTypedMessageWithMessage:(XHMessage *)message attributes:(NSDictionary *)attributes {
     AVIMTypedMessage *avimTypedMessage;
     switch (message.messageMediaType) {
@@ -512,7 +521,7 @@ typedef void (^LCIMErrorBlock)(NSString *messageUUID, NSError *error);
     avimTypedMessage.sendTimestamp = [[NSDate date] timeIntervalSince1970] * 1000;
     return avimTypedMessage;
 }
-
+//BQMM集成 发送消息方法
 - (void)sendMessage:(XHMessage *)message attributes:(NSDictionary *)attributes {
     message.attributes = attributes;
     [self sendMessage:message attributes:attributes success:^(NSString *messageUUID) {
@@ -523,6 +532,7 @@ typedef void (^LCIMErrorBlock)(NSString *messageUUID, NSError *error);
     }];
 }
 
+//BQMM集成
 - (void)sendMessage:(XHMessage *)message attributes:(NSDictionary *)attributes success:(LCIMSendMessageSuccessBlock)success failed:(LCIMErrorBlock)failed {
     message.conversationId = self.conversation.conversationId;
     message.status = XHMessageStatusSending;
@@ -559,6 +569,7 @@ typedef void (^LCIMErrorBlock)(NSString *messageUUID, NSError *error);
     [self.messages removeObjectAtIndex:indexPath.row];
     [self.avimTypedMessage removeObjectAtIndex:indexPath.row];
     [self.messageTableView reloadData];
+    //BQMM集成
     [self sendMessage:xhMessage attributes:nil success:^(NSString *messageUUID) {
         [[CDFailedMessageStore store] deleteFailedMessageByRecordId:messageUUID];
     } failed:^(NSString *messageUUID, NSError *error) {
@@ -671,9 +682,10 @@ typedef void (^LCIMErrorBlock)(NSString *messageUUID, NSError *error);
             }
         }
         xhMessage.status = status;
-    } else {
+//    } else {
         xhMessage.status = XHMessageStatusReceived;
     }
+    //BQMM集成
     xhMessage.attributes = message.attributes;
     return xhMessage;
 }
@@ -692,6 +704,7 @@ typedef void (^LCIMErrorBlock)(NSString *messageUUID, NSError *error);
 - (NSMutableArray *)getAVIMMessages:(NSArray<XHMessage *> *)xhMessages {
     NSMutableArray *messages = [[NSMutableArray alloc] init];
     for (XHMessage *message in xhMessages) {
+        //BQMM集成
         AVIMTypedMessage *avimTypedMessage = [self getAVIMTypedMessageWithMessage:message attributes:nil];
         if (avimTypedMessage) {
             [messages addObject:avimTypedMessage];
@@ -831,7 +844,7 @@ typedef void (^LCIMErrorBlock)(NSString *messageUUID, NSError *error);
     if (self.loadingMoreMessage) {
         return;
     }
-    
+    //BQMM集成
     [CDMessageHelper convertAndroidAttributesToIos:message];
     
     self.loadingMoreMessage = YES;

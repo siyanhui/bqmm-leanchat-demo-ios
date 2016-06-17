@@ -23,6 +23,7 @@
 #import <OpenShare/OpenShareHeader.h>
 #import "MBProgressHUD.h"
 
+//BQMM集成
 #import <BQMM/BQMM.h>
 
 @interface CDAppDelegate()
@@ -88,6 +89,7 @@
 //    [AVOSCloud setAllLogsEnabled:YES];
 #endif
     
+    //BQMM集成  BQMM初始化
     [[MMEmotionCentre defaultCentre] setAppId:@"15e0710942ec49a29d2224a6af4460ee"
                                        secret:@"b11e0936a9d04be19300b1d6eec0ccd5"];
     
@@ -114,6 +116,7 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
+    //BQMM集成
     [[MMEmotionCentre defaultCentre] clearSession];
 }
 

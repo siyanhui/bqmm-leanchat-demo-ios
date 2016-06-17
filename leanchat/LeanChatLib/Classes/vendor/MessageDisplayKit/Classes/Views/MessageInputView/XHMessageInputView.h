@@ -10,6 +10,7 @@
 
 #import "XHMessageTextView.h"
 
+//BQMM集成
 @class MMEmoji;
 
 typedef NS_ENUM(NSInteger, XHMessageInputViewStyle) {
@@ -59,6 +60,7 @@ typedef NS_ENUM(NSInteger, XHMessageInputViewStyle) {
  */
 - (void)didSendTextAction:(NSString *)text;
 
+//BQMM集成
 /**
  *  发送表情mm 大表情
  *

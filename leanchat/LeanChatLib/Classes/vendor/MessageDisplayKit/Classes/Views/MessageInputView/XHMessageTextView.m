@@ -8,6 +8,7 @@
 
 #import "XHMessageTextView.h"
 
+//BQMM集成
 #import <BQMM/BQMM.h>
 
 @implementation XHMessageTextView
@@ -79,10 +80,11 @@
     [self setNeedsDisplay];
 }
 
+//BQMM集成
 - (void)copy:(id)sender {
     [UIPasteboard generalPasteboard].string = [self mmTextWithRange:self.selectedRange];
 }
-
+//BQMM集成
 - (void)cut:(id)sender {
     [UIPasteboard generalPasteboard].string = [self mmTextWithRange:self.selectedRange];
     NSRange range  = [self.mmText rangeOfString:[UIPasteboard generalPasteboard].string];

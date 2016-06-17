@@ -14,6 +14,7 @@
 #import "CDMacros.h"
 #import "CDChatManager_Internal.h"
 
+//BQMM集成
 #import "CDMessageHelper.h"
 
 static CDChatManager *instance;
@@ -235,6 +236,7 @@ static CDChatManager *instance;
         NSMutableArray *typedMessages = [NSMutableArray array];
         for (AVIMTypedMessage *message in messages) {
             if ([message isKindOfClass:[AVIMTypedMessage class]]) {
+                //BQMM集成
                 [CDMessageHelper convertAndroidAttributesToIos:message];
                 [typedMessages addObject:message];
             }

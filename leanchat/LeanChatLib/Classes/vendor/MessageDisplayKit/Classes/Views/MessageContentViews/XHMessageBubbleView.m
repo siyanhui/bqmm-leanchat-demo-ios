@@ -9,7 +9,7 @@
 #import "XHMessageBubbleView.h"
 
 #import "XHMessageBubbleHelper.h"
-
+//BQMM集成
 #import <BQMM/BQMM.h>
 #import "MMTextView.h"
 #import "MMTextParser+ExtData.h"
@@ -24,7 +24,7 @@ static CGFloat const kVoiceMargin = 20.0f;
 #define kXHArrowMarginWidth 14
 
 @interface XHMessageBubbleView ()
-
+//BQMM集成
 @property (nonatomic, weak, readwrite) MMTextView *displayTextView;
 
 @property (nonatomic, weak, readwrite) UIImageView *bubbleImageView;
@@ -48,7 +48,7 @@ static CGFloat const kVoiceMargin = 20.0f;
 @implementation XHMessageBubbleView
 
 #pragma mark - Bubble view
-
+//BQMM集成
 //+ (CGFloat)neededWidthForText:(NSString *)text {
 //    NSAttributedString *attributedText =
 //    [[NSAttributedString alloc] initWithString:text
@@ -90,6 +90,7 @@ static CGFloat const kVoiceMargin = 20.0f;
 
 + (CGSize)getBubbleFrameWithMessage:(id<XHMessageModel>)message {
     CGSize bubbleSize;
+    //BQMM集成
     switch (message.messageMediaType) {
         case XHBubbleMessageMediaTypeText: {
             CGFloat maxWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]) * (kIsiPad ? 0.8 : 0.55);
@@ -192,7 +193,7 @@ static CGFloat const kVoiceMargin = 20.0f;
             // 只要是文本、语音、第三方表情，都需要把显示尖嘴图片的控件隐藏了
             _bubblePhotoImageView.hidden = YES;
             
-            
+            //BQMM集成
             NSDictionary *attributes = [message attributes];
             NSString *txt_msgType = attributes[@"txt_msgType"];
 
@@ -249,6 +250,7 @@ static CGFloat const kVoiceMargin = 20.0f;
 - (void)configureMessageDisplayMediaWithMessage:(id<XHMessageModel>)message {
     switch (message.messageMediaType) {
         case XHBubbleMessageMediaTypeText:
+            //BQMM集成
         {
             NSDictionary *attributes = [message attributes];
             NSString *txt_msgType = attributes[@"txt_msgType"];
@@ -323,6 +325,7 @@ static CGFloat const kVoiceMargin = 20.0f;
         }
         
         // 2、初始化显示文本消息的TextView
+        //BQMM集成
         if (!_displayTextView) {
             MMTextView *displayTextView = [[MMTextView alloc] initWithFrame:CGRectZero];
             displayTextView.backgroundColor = [UIColor clearColor];
@@ -374,6 +377,7 @@ static CGFloat const kVoiceMargin = 20.0f;
         // 5、初始化显示gif表情的控件
         if (!_emotionImageView) {
             FLAnimatedImageView *emotionImageView = [[FLAnimatedImageView alloc] initWithFrame:CGRectZero];
+            //BQMM集成
             emotionImageView.userInteractionEnabled = YES;
             [self addSubview:emotionImageView];
             _emotionImageView = emotionImageView;

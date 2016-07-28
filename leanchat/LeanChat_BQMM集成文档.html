@@ -293,33 +293,33 @@ span { display: inline-block; }
 </head>
 
 <body class="f9 b9">
-<h1>说明：</h1>
-<ul>
-	<li>
-		<p>
-			本Demo使用的是
-			<a href="https://github.com/leancloud/leanchat-ios">leanCloud官方在2016.03.09提交的版本</a>
-		</p>
-	</li>
-	<li>
-		<p>
-			本Demo在leanCloud官方Demo的基础上集成了BQMM,在修改的地方我们都加上了“BQMM集成"的注释，可在项目中全局搜索查看
-		</p>
-	</li>
-	<li>
-		<p>
-			我们提供了集成之后的Demo与官方Demo的Diff文档,供大家查看 (绿色为新增的代码，红色为删除的代码)
-		</p>
-	</li>
-</ul>
+  <h1>说明：</h1>
+  <ul>
+  	<li>
+  		<p>
+  			本Demo使用的是
+  			<a href="https://github.com/leancloud/leanchat-ios">leanCloud官方在2016.03.09提交的版本</a>
+  		</p>
+  	</li>
+  	<li>
+  		<p>
+  			本Demo在leanCloud官方Demo的基础上集成了BQMM,在修改的地方我们都加上了“BQMM集成"的注释，可在项目中全局搜索查看
+  		</p>
+  	</li>
+  	<li>
+  		<p>
+  			我们提供了集成之后的Demo与官方Demo的Diff文档,供大家查看 (绿色为新增的代码，红色为删除的代码)
+  		</p>
+  	</li>
+  </ul>
 
 
-<h1>
-	集成之后的Demo与官方Demo的Diff文档：
-</h1>
+  <h1>
+  	集成之后的Demo与官方Demo的Diff文档：
+  </h1>
 <pre>
 <span class="bold">diff --git a/LeanChat/LeanChat/CDAppDelegate.m b/LeanChat/LeanChat/CDAppDelegate.m</span>
-<span class="bold">index 532c49b..20c9578 100755</span>
+<span class="bold">index 532c49b..ab4b6f0 100755</span>
 <span class="bold">--- a/LeanChat/LeanChat/CDAppDelegate.m</span>
 <span class="bold">+++ b/LeanChat/LeanChat/CDAppDelegate.m</span>
 <span class="f6">@@ -23,6 +23,9 @@</span>
@@ -338,8 +338,8 @@ span { display: inline-block; }
 #endif
 
     <span class="f2">//BQMM集成  BQMM初始化</span>
-<span class="f2">    [[MMEmotionCentre defaultCentre] setAppId:@&quot;YourAppId&quot;</span>
-<span class="f2">                                       secret:@&quot;YourAppSecret&quot;];</span>
+<span class="f2">    [[MMEmotionCentre defaultCentre] setAppId:@&quot;appId&quot;</span>
+<span class="f2">                                       secret:@&quot;appSecret&quot;];</span>
 
     return YES;
 }
@@ -367,14 +367,14 @@ span { display: inline-block; }
 		&lt;dict&gt;
 			&lt;key&gt;clouddn.com&lt;/key&gt;
 <span class="bold">diff --git a/LeanChat/Podfile b/LeanChat/Podfile</span>
-<span class="bold">index 8e26561..64b4a62 100755</span>
+<span class="bold">index 8e26561..1df2793 100755</span>
 <span class="bold">--- a/LeanChat/Podfile</span>
 <span class="bold">+++ b/LeanChat/Podfile</span>
 <span class="f6">@@ -23,6 +23,7 @@</span> target 'LeanChat' do
     pod 'PopMenu', '2.4'
     pod 'CYLTabBarController'
     pod 'SDWebImage'
-    <span class="f2">pod 'BQMM', '1.5.0'</span>
+    <span class="f2">pod 'BQMM', '1.7.0'</span>
 
 #    pod 'LeanCloudSocial', :path =&gt; '~/ios/leancloud-social-ios'
 #    pod 'LeanCloudFeedback', :path =&gt; '~/ios/leancloud-feedback-ios/'
@@ -638,7 +638,7 @@ static CDChatManager *instance;
 /**
  *  发送图片消息的回调方法
 <span class="bold">diff --git a/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Controllers/XHMessageTableViewController/XHMessageTableViewController.m b/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Controllers/XHMessageTableViewController/XHMessageTableViewController.m</span>
-<span class="bold">index 72bcec8..d65f405 100755</span>
+<span class="bold">index 72bcec8..5be25ce 100755</span>
 <span class="bold">--- a/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Controllers/XHMessageTableViewController/XHMessageTableViewController.m</span>
 <span class="bold">+++ b/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Controllers/XHMessageTableViewController/XHMessageTableViewController.m</span>
 <span class="f6">@@ -13,6 +13,10 @@</span>
@@ -647,7 +647,7 @@ static CDChatManager *instance;
 
 <span class="f2">//BQMM集成</span>
 <span class="f2">#import &lt;BQMM/BQMM.h&gt;</span>
-<span class="f2">#import &quot;MMTextParser+ExtData.h&quot;</span>
+<span class="f2">#import &quot;MMTextParser.h&quot;</span>
 
 static void * const XHMessageInputTextViewContext = (void*)&amp;XHMessageInputTextViewContext;
 static CGFloat const LCIMScrollViewInsetTop = 20.f;
@@ -663,40 +663,32 @@ static CGFloat const LCIMScrollViewInsetTop = 20.f;
     }
 }
 
-<span class="f6">@@ -988,9 +993,41 @@</span> - (void)didInputAtSign:(XHMessageTextView *)messageInputTextView {
+<span class="f6">@@ -987,10 +992,33 @@</span> - (void)didInputAtSign:(XHMessageTextView *)messageInputTextView {
+    }
 }
 
-- (void)didSendTextAction:(NSString *)text {
-    <span class="f2">//BQMM集成</span>
-<span class="f2">    NSString *text_ = [text stringByReplacingOccurrencesOfString:@&quot;\a&quot; withString:@&quot;&quot;];</span>
-<span class="f2">    [MMTextParser localParseMMText:text_ completionHandler:^(NSArray *textImgArray) {</span>
-<span class="f2">        NSDictionary *ext = nil;</span>
-<span class="f2">        NSString *sendStr = @&quot;&quot;;</span>
-<span class="f2">        for (id obj in textImgArray) {</span>
-<span class="f2">            if ([obj isKindOfClass:[MMEmoji class]]) {</span>
-<span class="f2">                MMEmoji *emoji = (MMEmoji*)obj;</span>
-<span class="f2">                if (!ext) {</span>
-<span class="f2">                    ext = @{@&quot;txt_msgType&quot;:@&quot;emojitype&quot;,</span>
-<span class="f2">                            @&quot;msg_data&quot;:[MMTextParser extDataWithTextImageArray:textImgArray]};</span>
-<span class="f2">                }</span>
-<span class="f2">                sendStr = [sendStr stringByAppendingString:[NSString stringWithFormat:@&quot;[%@]&quot;, emoji.emojiName]];</span>
-<span class="f2">            }</span>
-<span class="f2">            else if ([obj isKindOfClass:[NSString class]]) {</span>
-<span class="f2">                sendStr = [sendStr stringByAppendingString:obj];</span>
-<span class="f2">            }</span>
-<span class="f2">        }</span>
-
-        DLog(@&quot;text : %@&quot;, <span class="f1">text</span><span class="f2">sendStr</span>);
-        if ([self.delegate respondsToSelector:@selector(didSendText:<span class="f2">attributes:</span>fromSender:onDate:)]) {
-            [self.delegate didSendText:<span class="f2">sendStr attributes:ext fromSender:self.messageSender onDate:[NSDate date]];</span>
-<span class="f2">        }</span>
-<span class="f2">    }];</span>
+- (void)<span class="f1">didSendTextAction</span><span class="f2">didSendTextWithTextView</span>:(<span class="f2">UITextView *)textView {</span>
+<span class="f2">    //BQMM集成</span>
+<span class="f2">    </span>
+<span class="f2">    NSString *sendStr = textView.characterMMText;</span>
+    NSString *<span class="f2">checkEmpty = [sendStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];</span>
+<span class="f2">    if ([checkEmpty isEqualToString:@&quot;&quot;]</span>) <span class="f2">{</span>
+<span class="f2">        textView.</span>text <span class="f2">= @&quot;&quot;;</span>
+<span class="f2">        return;</span>
+<span class="f2">    }</span>
+<span class="f2">    NSArray *textImgArray = textView.textImgArray;</span>
+<span class="f2">    NSDictionary *mmExt = @</span>{<span class="f2">@&quot;txt_msgType&quot;:@&quot;emojitype&quot;,</span>
+<span class="f2">                            @&quot;msg_data&quot;:[MMTextParser extDataWithTextImageArray:textImgArray]};;</span>
+    DLog(@&quot;text : %@&quot;, <span class="f1">text</span><span class="f2">sendStr</span>);
+    if ([self.delegate respondsToSelector:@selector(didSendText:<span class="f2">attributes:</span>fromSender:onDate:)]) {
+        [self.delegate didSendText:<span class="f2">sendStr attributes:mmExt fromSender:self.messageSender onDate:[NSDate date]];</span>
+<span class="f2">    }</span>
 <span class="f2">}</span>
 
 <span class="f2">//BQMM集成</span>
 <span class="f2">- (void)didSendMMFaceAction:(MMEmoji *)emoji {</span>
 <span class="f2">    NSDictionary *ext = @{@&quot;txt_msgType&quot;:@&quot;facetype&quot;,</span>
-<span class="f2">                          @&quot;msg_data&quot;:[MMTextParser extDataWithEmojiCode:emoji.emojiCode]};</span>
+<span class="f2">                          @&quot;msg_data&quot;:[MMTextParser extDataWithEmoji:emoji]};</span>
 <span class="f2">    NSString *sendStr = [NSString stringWithFormat:@&quot;[%@]&quot;, emoji.emojiName];</span>
 <span class="f2">    </span>
 <span class="f2">    DLog(@&quot;</span>text <span class="f2">: %@&quot;, sendStr);</span>
@@ -705,7 +697,7 @@ static CGFloat const LCIMScrollViewInsetTop = 20.f;
     }
 }
 
-<span class="f6">@@ -999,13 +1036,24 @@</span> - (void)didSelectedMultipleMediaAction {
+<span class="f6">@@ -999,13 +1027,24 @@</span> - (void)didSelectedMultipleMediaAction {
     self.textViewInputViewType = XHInputViewTypeShareMenu;
     [self layoutOtherMenuViewHiden:NO];
 }
@@ -730,6 +722,11 @@ static CGFloat const LCIMScrollViewInsetTop = 20.f;
     }
 }
 
+<span class="f6">@@ -1238,4 +1277,4 @@</span> - (void)observeValueForKeyPath:(NSString *)keyPath
+    }
+}
+
+@end
 <span class="bold">diff --git a/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Models/XHMessage.h b/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Models/XHMessage.h</span>
 <span class="bold">index 79e8379..bfd7e54 100755</span>
 <span class="bold">--- a/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Models/XHMessage.h</span>
@@ -780,7 +777,7 @@ static CGFloat const LCIMScrollViewInsetTop = 20.f;
 /**
  *  用于显示气泡的ImageView控件
 <span class="bold">diff --git a/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageContentViews/XHMessageBubbleView.m b/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageContentViews/XHMessageBubbleView.m</span>
-<span class="bold">index 6ddeba9..236150a 100755</span>
+<span class="bold">index 6ddeba9..01efe3c 100755</span>
 <span class="bold">--- a/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageContentViews/XHMessageBubbleView.m</span>
 <span class="bold">+++ b/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageContentViews/XHMessageBubbleView.m</span>
 <span class="f6">@@ -9,6 +9,10 @@</span>
@@ -790,7 +787,7 @@ static CGFloat const LCIMScrollViewInsetTop = 20.f;
 <span class="f2">//BQMM集成</span>
 <span class="f2">#import &lt;BQMM/BQMM.h&gt;</span>
 <span class="f2">#import &quot;MMTextView.h&quot;</span>
-<span class="f2">#import &quot;MMTextParser+ExtData.h&quot;</span>
+<span class="f2">#import &quot;MMTextParser.h&quot;</span>
 
 static CGFloat const kMarginTop = 8.0f;
 static CGFloat const kMarginBottom = 2.0f;
@@ -928,7 +925,7 @@ static CGFloat const kMarginBottom = 2.0f;
             _emotionImageView = emotionImageView;
         }
 <span class="bold">diff --git a/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageContentViews/XHMessageTableViewCell.m b/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageContentViews/XHMessageTableViewCell.m</span>
-<span class="bold">index 41f4d4b..a8dae71 100755</span>
+<span class="bold">index 41f4d4b..c0e9e91 100755</span>
 <span class="bold">--- a/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageContentViews/XHMessageTableViewCell.m</span>
 <span class="bold">+++ b/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageContentViews/XHMessageTableViewCell.m</span>
 <span class="f6">@@ -12,6 +12,10 @@</span>
@@ -937,7 +934,7 @@ static CGFloat const kMarginBottom = 2.0f;
 
 <span class="f2">//BQMM集成</span>
 <span class="f2">#import &quot;MMTextView.h&quot;</span>
-<span class="f2">#import &quot;MMTextParser+ExtData.h&quot;</span>
+<span class="f2">#import &quot;MMTextParser.h&quot;</span>
 
 NSString *const senderCellIdentifier = @&quot;XHMessageTableViewCellSender&quot;;
 NSString *const receiverCellIdentifier = @&quot;XHMessageTableViewCellReceiver&quot;;
@@ -996,7 +993,7 @@ NSString *const receiverCellIdentifier = @&quot;XHMessageTableViewCellReceiver&q
             break;
         }
 <span class="bold">diff --git a/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageInputView/XHMessageInputView.h b/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageInputView/XHMessageInputView.h</span>
-<span class="bold">index 0d22562..6a82533 100755</span>
+<span class="bold">index 0d22562..33d0ae8 100755</span>
 <span class="bold">--- a/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageInputView/XHMessageInputView.h</span>
 <span class="bold">+++ b/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageInputView/XHMessageInputView.h</span>
 <span class="f6">@@ -10,6 +10,9 @@</span>
@@ -1009,9 +1006,11 @@ NSString *const receiverCellIdentifier = @&quot;XHMessageTableViewCellReceiver&q
 typedef NS_ENUM(NSInteger, XHMessageInputViewStyle) {
     // 分两种,一种是iOS6样式的，一种是iOS7样式的
     XHMessageInputViewStyleQuasiphysical,
-<span class="f6">@@ -57,6 +60,14 @@</span> typedef NS_ENUM(NSInteger, XHMessageInputViewStyle) {
+<span class="f6">@@ -55,7 +58,15 @@</span> typedef NS_ENUM(NSInteger, XHMessageInputViewStyle) {
+ *
+ *  @param text 目标文本消息
  */
-- (void)didSendTextAction:(NSString *)text;
+- <span class="f1">(void)didSendTextAction:(NSString *)text;</span><span class="f2">(void)didSendTextWithTextView:(UITextView *)textView;</span>
 
 <span class="f2">//BQMM集成</span>
 <span class="f2">/**</span>
@@ -1023,9 +1022,8 @@ typedef NS_ENUM(NSInteger, XHMessageInputViewStyle) {
 
 /**
  *  点击+号按钮Action
- */
 <span class="bold">diff --git a/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageInputView/XHMessageInputView.m b/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageInputView/XHMessageInputView.m</span>
-<span class="bold">index eca9887..579e016 100755</span>
+<span class="bold">index eca9887..f23be1a 100755</span>
 <span class="bold">--- a/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageInputView/XHMessageInputView.m</span>
 <span class="bold">+++ b/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageInputView/XHMessageInputView.m</span>
 <span class="f6">@@ -11,13 +11,15 @@</span>
@@ -1054,26 +1052,23 @@ typedef NS_ENUM(NSInteger, XHMessageInputViewStyle) {
 }
 
 - (void)awakeFromNib {
-<span class="f6">@@ -548,7 +553,8 @@</span> - (void)textViewDidEndEditing:(UITextView *)textView {
+<span class="f6">@@ -547,8 +552,9 @@</span> - (void)textViewDidEndEditing:(UITextView *)textView {
+
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     if ([text isEqualToString:@&quot;\n&quot;]) {
-        if ([self.delegate respondsToSelector:@selector(didSendTextAction:)]) {
+        if ([self.delegate respondsToSelector:@selector(<span class="f1">didSendTextAction</span><span class="f2">didSendTextWithTextView</span>:)]) {
             <span class="f2">//BQMM集成</span>
-            [self.delegate didSendTextAction:textView.<span class="f1">text</span><span class="f2">mmText</span>];
+            [self.delegate <span class="f1">didSendTextAction</span><span class="f2">didSendTextWithTextView</span>:textView<span class="f1">.text</span>];
         }
         return NO;
     } else if ([text isEqualToString:@&quot;@&quot;]) {
-<span class="f6">@@ -560,4 +566,58 @@</span> - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range r
+<span class="f6">@@ -560,4 +566,56 @@</span> - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range r
     return YES;
 }
 
 <span class="f2">//BQMM集成  开始</span>
 <span class="f2">- (void)textViewDidChange:(UITextView *)textView {</span>
-<span class="f2">    if (textView.markedTextRange == nil) {</span>
-<span class="f2">        NSRange selectedRange = textView.selectedRange;</span>
-<span class="f2">        textView.mmText = textView.mmText;</span>
-<span class="f2">        textView.selectedRange = selectedRange;</span>
-<span class="f2">    }</span>
+<span class="f2">    </span>
 <span class="f2">}</span>
 
 <span class="f2">#pragma mark - MMEmotionCentreDelegate</span>
@@ -1092,8 +1087,10 @@ typedef NS_ENUM(NSInteger, XHMessageInputViewStyle) {
 <span class="f2">}</span>
 
 <span class="f2">- (void)didSendWithInput:(UIResponder&lt;UITextInput&gt; *)input {</span>
-<span class="f2">    if ([self.delegate respondsToSelector:@selector(didSendTextAction:)]) {</span>
-<span class="f2">        [self.delegate didSendTextAction:_inputTextView.mmText];</span>
+<span class="f2">    if ([input isKindOfClass:[UITextView class]] ) {</span>
+<span class="f2">        if ([self.delegate respondsToSelector:@selector(didSendTextWithTextView:)]) {</span>
+<span class="f2">            [self.delegate didSendTextWithTextView:(UITextView *)input];</span>
+<span class="f2">        }</span>
 <span class="f2">    }</span>
 <span class="f2">}</span>
 
@@ -1123,7 +1120,7 @@ typedef NS_ENUM(NSInteger, XHMessageInputViewStyle) {
 
 
 <span class="bold">diff --git a/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageInputView/XHMessageTextView.m b/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageInputView/XHMessageTextView.m</span>
-<span class="bold">index 14806de..5cdb6b3 100755</span>
+<span class="bold">index 14806de..24f64eb 100755</span>
 <span class="bold">--- a/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageInputView/XHMessageTextView.m</span>
 <span class="bold">+++ b/LeanChatLib/Classes/vendor/MessageDisplayKit/Classes/Views/MessageInputView/XHMessageTextView.m</span>
 <span class="f6">@@ -8,6 +8,9 @@</span>
@@ -1136,30 +1133,53 @@ typedef NS_ENUM(NSInteger, XHMessageInputViewStyle) {
 @implementation XHMessageTextView
 
 #pragma mark - Setters
-<span class="f6">@@ -77,6 +80,24 @@</span> - (void)setTextAlignment:(NSTextAlignment)textAlignment {
-    [self setNeedsDisplay];
-}
+<span class="bold">diff --git a/LeanChatLib/LeanChatLib.xcodeproj/project.pbxproj b/LeanChatLib/LeanChatLib.xcodeproj/project.pbxproj</span>
+<span class="bold">index 1d295ff..e09c063 100755</span>
+<span class="bold">--- a/LeanChatLib/LeanChatLib.xcodeproj/project.pbxproj</span>
+<span class="bold">+++ b/LeanChatLib/LeanChatLib.xcodeproj/project.pbxproj</span>
+<span class="f6">@@ -1729,12 +1729,12 @@</span>
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7073F95C1B1467F6006F2692 /* Build configuration list for PBXNativeTarget &quot;LeanChatLib&quot; */;
+			buildPhases = (
+				C79B42ADF7E874AD05B615FE /* <span class="f2">[CP]</span> Check Pods Manifest.lock */,
+				7073F9411B1467F5006F2692 /* Sources */,
+				7073F9421B1467F5006F2692 /* Frameworks */,
+				7073F9431B1467F5006F2692 /* Headers */,
+				7073F9441B1467F5006F2692 /* Resources */,
+				F076F1D9170BF2EEB95F4880 /* <span class="f2">[CP]</span> Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+<span class="f6">@@ -1945,14 +1945,14 @@</span>
+/* End PBXResourcesBuildPhase section */
 
-<span class="f2">//BQMM集成</span>
-<span class="f2">- (void)copy:(id)sender {</span>
-<span class="f2">    [UIPasteboard generalPasteboard].string = [self mmTextWithRange:self.selectedRange];</span>
-<span class="f2">}</span>
-<span class="f2">//BQMM集成</span>
-<span class="f2">- (void)cut:(id)sender {</span>
-<span class="f2">    [UIPasteboard generalPasteboard].string = [self mmTextWithRange:self.selectedRange];</span>
-<span class="f2">    NSRange range  = [self.mmText rangeOfString:[UIPasteboard generalPasteboard].string];</span>
-<span class="f2">    NSString *left = [self.mmText substringToIndex:range.location];</span>
-<span class="f2">    NSString *right = [self.mmText substringFromIndex:range.location + range.length];</span>
-<span class="f2">    NSRange selectedRange = self.selectedRange;</span>
-<span class="f2">    self.mmText = [NSString stringWithFormat:@&quot;%@%@&quot;, left, right];</span>
-<span class="f2">    self.selectedRange = NSMakeRange(selectedRange.location, 0);</span>
-<span class="f2">    if ([self.delegate respondsToSelector:@selector(textViewDidChange:)]) {</span>
-<span class="f2">        [self.delegate textViewDidChange:self];</span>
-<span class="f2">    }</span>
-<span class="f2">}</span>
-
-#pragma mark - Notifications
-
-- (void)didReceiveTextDidChangeNotification:(NSNotification *)notification {
+/* Begin PBXShellScriptBuildPhase section */
+		C79B42ADF7E874AD05B615FE /* <span class="f2">[CP]</span> Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = <span class="f1">&quot;Check</span><span class="f2">&quot;[CP] Check</span> Pods Manifest.lock&quot;;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+<span class="f6">@@ -1960,14 +1960,14 @@</span>
+			shellScript = &quot;diff \&quot;${PODS_ROOT}/../Podfile.lock\&quot; \&quot;${PODS_ROOT}/Manifest.lock\&quot; &gt; /dev/null\nif [[ $? != 0 ]] ; then\n    cat &lt;&lt; EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n&quot;;
+			showEnvVarsInLog = 0;
+		};
+		F076F1D9170BF2EEB95F4880 /* <span class="f2">[CP]</span> Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = <span class="f1">&quot;Copy</span><span class="f2">&quot;[CP] Copy</span> Pods Resources&quot;;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+</pre>
 </body>
 </html>

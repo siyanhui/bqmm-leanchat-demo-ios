@@ -552,9 +552,9 @@
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     if ([text isEqualToString:@"\n"]) {
-        if ([self.delegate respondsToSelector:@selector(didSendTextAction:)]) {
+        if ([self.delegate respondsToSelector:@selector(didSendTextWithTextView:)]) {
             //BQMM集成
-            [self.delegate didSendTextAction:textView.mmText];
+            [self.delegate didSendTextWithTextView:textView];
         }
         return NO;
     } else if ([text isEqualToString:@"@"]) {
@@ -568,11 +568,7 @@
 
 //BQMM集成  开始
 - (void)textViewDidChange:(UITextView *)textView {
-    if (textView.markedTextRange == nil) {
-        NSRange selectedRange = textView.selectedRange;
-        textView.mmText = textView.mmText;
-        textView.selectedRange = selectedRange;
-    }
+    
 }
 
 #pragma mark - MMEmotionCentreDelegate
@@ -591,8 +587,10 @@
 }
 
 - (void)didSendWithInput:(UIResponder<UITextInput> *)input {
-    if ([self.delegate respondsToSelector:@selector(didSendTextAction:)]) {
-        [self.delegate didSendTextAction:_inputTextView.mmText];
+    if ([input isKindOfClass:[UITextView class]] ) {
+        if ([self.delegate respondsToSelector:@selector(didSendTextWithTextView:)]) {
+            [self.delegate didSendTextWithTextView:(UITextView *)input];
+        }
     }
 }
 

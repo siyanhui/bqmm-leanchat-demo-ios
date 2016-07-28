@@ -12,7 +12,7 @@
 //BQMM集成
 #import <BQMM/BQMM.h>
 #import "MMTextView.h"
-#import "MMTextParser+ExtData.h"
+#import "MMTextParser.h"
 
 static CGFloat const kMarginTop = 8.0f;
 static CGFloat const kMarginBottom = 2.0f;

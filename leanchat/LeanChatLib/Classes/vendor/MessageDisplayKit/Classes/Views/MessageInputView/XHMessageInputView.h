@@ -58,7 +58,7 @@ typedef NS_ENUM(NSInteger, XHMessageInputViewStyle) {
  *
  *  @param text 目标文本消息
  */
-- (void)didSendTextAction:(NSString *)text;
+- (void)didSendTextWithTextView:(UITextView *)textView;
 
 //BQMM集成
 /**

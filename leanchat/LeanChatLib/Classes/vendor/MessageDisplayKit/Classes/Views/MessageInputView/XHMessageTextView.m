@@ -80,24 +80,6 @@
     [self setNeedsDisplay];
 }
 
-//BQMM集成
-- (void)copy:(id)sender {
-    [UIPasteboard generalPasteboard].string = [self mmTextWithRange:self.selectedRange];
-}
-//BQMM集成
-- (void)cut:(id)sender {
-    [UIPasteboard generalPasteboard].string = [self mmTextWithRange:self.selectedRange];
-    NSRange range  = [self.mmText rangeOfString:[UIPasteboard generalPasteboard].string];
-    NSString *left = [self.mmText substringToIndex:range.location];
-    NSString *right = [self.mmText substringFromIndex:range.location + range.length];
-    NSRange selectedRange = self.selectedRange;
-    self.mmText = [NSString stringWithFormat:@"%@%@", left, right];
-    self.selectedRange = NSMakeRange(selectedRange.location, 0);
-    if ([self.delegate respondsToSelector:@selector(textViewDidChange:)]) {
-        [self.delegate textViewDidChange:self];
-    }
-}
-
 #pragma mark - Notifications
 
 - (void)didReceiveTextDidChangeNotification:(NSNotification *)notification {

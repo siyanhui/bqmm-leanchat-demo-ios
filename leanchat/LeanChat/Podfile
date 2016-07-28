@@ -23,7 +23,7 @@ target 'LeanChat' do
     pod 'PopMenu', '2.4'
     pod 'CYLTabBarController'
     pod 'SDWebImage'
-    pod 'BQMM', '1.6.0'
+    pod 'BQMM', '1.7.0'
 
 #    pod 'LeanCloudSocial', :path => '~/ios/leancloud-social-ios'
 #    pod 'LeanCloudFeedback', :path => '~/ios/leancloud-feedback-ios/'

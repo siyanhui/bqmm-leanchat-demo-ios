@@ -14,7 +14,7 @@
 
 //BQMM集成
 #import "MMTextView.h"
-#import "MMTextParser+ExtData.h"
+#import "MMTextParser.h"
 
 NSString *const senderCellIdentifier = @"XHMessageTableViewCellSender";
 NSString *const receiverCellIdentifier = @"XHMessageTableViewCellReceiver";

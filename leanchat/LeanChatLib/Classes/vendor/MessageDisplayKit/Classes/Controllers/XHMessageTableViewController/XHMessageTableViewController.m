@@ -15,7 +15,7 @@
 
 //BQMM集成
 #import <BQMM/BQMM.h>
-#import "MMTextParser+ExtData.h"
+#import "MMTextParser.h"
 
 static void * const XHMessageInputTextViewContext = (void*)&XHMessageInputTextViewContext;
 static CGFloat const LCIMScrollViewInsetTop = 20.f;
@@ -992,37 +992,28 @@ static CGPoint  delayOffset = {0.0};
     }
 }
 
-- (void)didSendTextAction:(NSString *)text {
+- (void)didSendTextWithTextView:(UITextView *)textView {
     //BQMM集成
-    NSString *text_ = [text stringByReplacingOccurrencesOfString:@"\a" withString:@""];
-    [MMTextParser localParseMMText:text_ completionHandler:^(NSArray *textImgArray) {
-        NSDictionary *ext = nil;
-        NSString *sendStr = @"";
-        for (id obj in textImgArray) {
-            if ([obj isKindOfClass:[MMEmoji class]]) {
-                MMEmoji *emoji = (MMEmoji*)obj;
-                if (!ext) {
-                    ext = @{@"txt_msgType":@"emojitype",
-                            @"msg_data":[MMTextParser extDataWithTextImageArray:textImgArray]};
-                }
-                sendStr = [sendStr stringByAppendingString:[NSString stringWithFormat:@"[%@]", emoji.emojiName]];
-            }
-            else if ([obj isKindOfClass:[NSString class]]) {
-                sendStr = [sendStr stringByAppendingString:obj];
-            }
-        }
-        
-        DLog(@"text : %@", sendStr);
-        if ([self.delegate respondsToSelector:@selector(didSendText:attributes:fromSender:onDate:)]) {
-            [self.delegate didSendText:sendStr attributes:ext fromSender:self.messageSender onDate:[NSDate date]];
-        }
-    }];
+    
+    NSString *sendStr = textView.characterMMText;
+    NSString *checkEmpty = [sendStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    if ([checkEmpty isEqualToString:@""]) {
+        textView.text = @"";
+        return;
+    }
+    NSArray *textImgArray = textView.textImgArray;
+    NSDictionary *mmExt = @{@"txt_msgType":@"emojitype",
+                            @"msg_data":[MMTextParser extDataWithTextImageArray:textImgArray]};;
+    DLog(@"text : %@", sendStr);
+    if ([self.delegate respondsToSelector:@selector(didSendText:attributes:fromSender:onDate:)]) {
+        [self.delegate didSendText:sendStr attributes:mmExt fromSender:self.messageSender onDate:[NSDate date]];
+    }
 }
 
 //BQMM集成
 - (void)didSendMMFaceAction:(MMEmoji *)emoji {
     NSDictionary *ext = @{@"txt_msgType":@"facetype",
-                          @"msg_data":[MMTextParser extDataWithEmojiCode:emoji.emojiCode]};
+                          @"msg_data":[MMTextParser extDataWithEmoji:emoji]};
     NSString *sendStr = [NSString stringWithFormat:@"[%@]", emoji.emojiName];
     
     DLog(@"text : %@", sendStr);

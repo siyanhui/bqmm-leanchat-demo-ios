@@ -433,6 +433,10 @@
         [self addSubview:button];
         self.holdDownButton = button;
     }
+    
+    //BQMM集成
+    [MMEmotionCentre defaultCentre].delegate = self;
+    [[MMEmotionCentre defaultCentre] shouldShowShotcutPopoverAboveView:_faceSendButton withInput:_inputTextView];
 }
 
 #pragma mark - Life cycle
@@ -450,9 +454,6 @@
     _allowsSendMultiMedia = YES;
     
     _messageInputViewStyle = XHMessageInputViewStyleFlat;
-    //BQMM集成
-    [MMEmotionCentre defaultCentre].delegate = self;
-    [[MMEmotionCentre defaultCentre] shouldShowShotcutPopoverAboveView:_faceSendButton withInput:_inputTextView];
 }
 
 - (void)awakeFromNib {

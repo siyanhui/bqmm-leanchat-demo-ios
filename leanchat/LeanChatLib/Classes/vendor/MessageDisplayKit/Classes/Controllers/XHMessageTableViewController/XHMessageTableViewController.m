@@ -1037,12 +1037,11 @@ static CGPoint  delayOffset = {0.0};
 //    }
     
     //替换为表情mm键盘
-    if (![self.messageInputView.inputTextView isFirstResponder]) {
-        [self.messageInputView.inputTextView becomeFirstResponder];
-    }
-    
     if (sendFace) {
         [[MMEmotionCentre defaultCentre] attachEmotionKeyboardToInput:self.messageInputView.inputTextView];
+        if (![self.messageInputView.inputTextView isFirstResponder]) {
+            [self.messageInputView.inputTextView becomeFirstResponder];
+        }
     } else {
         [[MMEmotionCentre defaultCentre] switchToDefaultKeyboard];
     }

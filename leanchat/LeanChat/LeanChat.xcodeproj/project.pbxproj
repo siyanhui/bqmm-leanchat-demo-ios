@@ -70,7 +70,6 @@
 		9A2AFA771C2AB1EA00F451BE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2AFA761C2AB1EA00F451BE /* MediaPlayer.framework */; };
 		9A2AFA791C2AB21100F451BE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2AFA781C2AB21100F451BE /* QuartzCore.framework */; };
 		9A2AFA7B1C2AB21E00F451BE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2AFA7A1C2AB21E00F451BE /* Security.framework */; };
-		9A2AFA7D1C2AB22500F451BE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2AFA7C1C2AB22500F451BE /* StoreKit.framework */; };
 		9A2AFA7F1C2AB23400F451BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2AFA7E1C2AB23400F451BE /* UIKit.framework */; };
 		9AD85BB91C21666B006A35C1 /* CYLTabBarControllerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD85BB81C21666B006A35C1 /* CYLTabBarControllerConfig.m */; };
 /* End PBXBuildFile section */
@@ -203,7 +202,6 @@
 		9A2AFA761C2AB1EA00F451BE /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		9A2AFA781C2AB21100F451BE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9A2AFA7A1C2AB21E00F451BE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		9A2AFA7C1C2AB22500F451BE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9A2AFA7E1C2AB23400F451BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9AD85BB71C21666B006A35C1 /* CYLTabBarControllerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLTabBarControllerConfig.h; sourceTree = "<group>"; };
 		9AD85BB81C21666B006A35C1 /* CYLTabBarControllerConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLTabBarControllerConfig.m; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 			files = (
 				9A2AFA7F1C2AB23400F451BE /* UIKit.framework in Frameworks */,
 				9A2AFA6D1C2AADB200F451BE /* SystemConfiguration.framework in Frameworks */,
-				9A2AFA7D1C2AB22500F451BE /* StoreKit.framework in Frameworks */,
 				9A2AFA7B1C2AB21E00F451BE /* Security.framework in Frameworks */,
 				9A2AFA791C2AB21100F451BE /* QuartzCore.framework in Frameworks */,
 				9A2AFA6F1C2AADBB00F451BE /* MobileCoreServices.framework in Frameworks */,
@@ -497,7 +494,6 @@
 			isa = PBXGroup;
 			children = (
 				9A2AFA7E1C2AB23400F451BE /* UIKit.framework */,
-				9A2AFA7C1C2AB22500F451BE /* StoreKit.framework */,
 				9A2AFA7A1C2AB21E00F451BE /* Security.framework */,
 				9A2AFA781C2AB21100F451BE /* QuartzCore.framework */,
 				9A2AFA761C2AB1EA00F451BE /* MediaPlayer.framework */,
@@ -556,6 +552,11 @@
 					7073FC161B147048006F2692 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = HY2JF7VN6E;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -897,7 +898,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.avoscloud.leanchat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.siyanhui.leanchat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -985,7 +986,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.avoscloud.leanchat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.siyanhui.leanchat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

@@ -51,7 +51,7 @@
 
 - (void)alert:(NSString*)msg {
     UIAlertView *alertView=[[UIAlertView alloc]
-                            initWithTitle:nil message:msg delegate:nil
+                            initWithTitle:nil message:[NSString stringWithFormat:@"%@", msg] delegate:nil
                             cancelButtonTitle:@"确定" otherButtonTitles:nil];
     [alertView show];
 }

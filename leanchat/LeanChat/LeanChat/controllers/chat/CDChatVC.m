@@ -49,7 +49,7 @@
 }
 
 - (void)didSelectedAvatorOnMessage:(id<XHMessageModel>)message atIndexPath:(NSIndexPath *)indexPath {
-    AVIMTypedMessage *msg = self.msgs[indexPath.row];
+    AVIMTypedMessage *msg = self.avimTypedMessage[indexPath.row];
     if ([msg.clientId isEqualToString:[CDChatManager manager].clientId] == NO) {
         CDUserInfoVC *userInfoVC = [[CDUserInfoVC alloc] initWithUser:[[CDCacheManager manager] lookupUser:msg.clientId]];
         [self.navigationController pushViewController:userInfoVC animated:YES];

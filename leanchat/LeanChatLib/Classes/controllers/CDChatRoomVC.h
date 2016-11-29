@@ -24,6 +24,8 @@
  */
 @property (nonatomic, strong, readonly) NSMutableArray<AVIMTypedMessage *> *msgs;
 
+@property (nonatomic, strong, readwrite) NSMutableArray *avimTypedMessage;
+
 /**
  *  初始化方法
  *  @param conv 要聊天的对话

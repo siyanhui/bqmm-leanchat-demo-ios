@@ -8,7 +8,7 @@
 
 #import "LCCKChatImageMessageCell.h"
 #import "UIImage+LCCKExtension.h"
-
+#import <BQMM/BQMM.h>
 #if __has_include(<SDWebImage/UIImageView+WebCache.h>)
     #import <SDWebImage/UIImageView+WebCache.h>
 #else
@@ -20,7 +20,8 @@
 /**
  *  用来显示image的UIImageView
  */
-@property (nonatomic, strong) UIImageView *messageImageView;
+//BQMM集成
+@property (nonatomic, strong) MMImageView *messageImageView;
 
 /**
  *  用来显示上传进度的UIView
@@ -95,20 +96,20 @@
 
         // requied!
         if (message.originPhotoURL) {
-            [self.messageImageView  sd_setImageWithURL:message.originPhotoURL placeholderImage:[self imageInBundleForImageName:@"Placeholder_Image"]
-                                             completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                                 dispatch_async(dispatch_get_main_queue(),^{
-                                                     if (image){
-                                                         message.photo = image;
-                                                         message.thumbnailPhoto = [image lcck_imageByScalingAspectFill];
-                                                         if ([self.delegate respondsToSelector:@selector(fileMessageDidDownload:)]) {
-                                                             [self.delegate fileMessageDidDownload:self];
-                                                         }
-                                                     }
-                                                 });
-                                                 
-                                             }
-             ];
+//            [self.messageImageView  sd_setImageWithURL:message.originPhotoURL placeholderImage:[self imageInBundleForImageName:@"Placeholder_Image"]
+//                                             completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                                                 dispatch_async(dispatch_get_main_queue(),^{
+//                                                     if (image){
+//                                                         message.photo = image;
+//                                                         message.thumbnailPhoto = [image lcck_imageByScalingAspectFill];
+//                                                         if ([self.delegate respondsToSelector:@selector(fileMessageDidDownload:)]) {
+//                                                             [self.delegate fileMessageDidDownload:self];
+//                                                         }
+//                                                     }
+//                                                 });
+//                                                 
+//                                             }
+//             ];
             break;
         }
         
@@ -150,14 +151,15 @@
 
 #pragma mark - Getters
 
-- (UIImageView *)messageImageView {
+//BQMM集成
+- (MMImageView *)messageImageView {
     if (!_messageImageView) {
-        _messageImageView = [[UIImageView alloc] init];
+        _messageImageView = [[MMImageView alloc] init];
         //FIXME:这一行可以不需要
         _messageImageView.contentMode = UIViewContentModeScaleAspectFill;
     }
     return _messageImageView;
-    
+
 }
 
 - (UIView *)messageProgressView {

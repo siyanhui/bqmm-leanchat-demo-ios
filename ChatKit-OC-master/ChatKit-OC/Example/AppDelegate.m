@@ -37,17 +37,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     //BQMM集成  BQMM初始化
-    //    NSString *appId = @"appId";
-    //    NSString *secret = @"appSecret";
-    //    [[MMEmotionCentre defaultCentre] setAppId:appId
-    //                                       secret:secret];
-    NSString *appId = @"15e0710942ec49a29d2224a6af4460ee";
-    NSString *secret = @"b11e0936a9d04be19300b1d6eec0ccd5";
-    [[MMEmotionCentre defaultCentre] setAppId:appId
-                                       secret:secret];
+        NSString *appId = @"appId";
+        NSString *secret = @"appSecret";
+        [[MMEmotionCentre defaultCentre] setAppId:appId
+                                           secret:secret];
     
     
     MMTheme *theme = [[MMTheme alloc] init];
+    CGFloat keyboardHeight = 216;
+    if ([[UIScreen mainScreen] bounds].size.height == 812) {
+        keyboardHeight = 250;
+    }
+    theme.keyboardHeight = keyboardHeight;
     [[MMEmotionCentre defaultCentre] setTheme:theme];
     [MMEmotionCentre defaultCentre].sdkMode = MMSDKModeIM;
     [MMEmotionCentre defaultCentre].sdkLanguage = MMLanguageChinese;
@@ -97,6 +98,9 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     [LCChatKitExample invokeThisMethodInApplicationWillTerminate:application];
+    
+    //BQMM集成
+    [[MMEmotionCentre defaultCentre] clearCache];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
@@ -109,6 +113,12 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     return YES;
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    //BQMM集成
+    [[MMEmotionCentre defaultCentre] clearSession];
 }
 
 #pragma -

@@ -787,16 +787,9 @@ NSString *const LCCKConversationViewControllerErrorDomain = @"LCCKConversationVi
 
 
 #pragma mark - LCCKChatMessageCellDelegate
-//BQMM集成
 - (void)didTapBQMMEemojiMessage:(LCCKMessage *)message {
     if ([[message class] isSubclassOfClass:[AVIMTypedMessage class]]){
         AVIMTypedMessage *tempMessage = message;
-        if([tempMessage.attributes[TEXT_MESG_TYPE] isEqualToString:TEXT_MESG_FACE_TYPE]) {
-            if (tempMessage.attributes[TEXT_MESG_DATA]) {
-                UIViewController *emojiController = [[MMEmotionCentre defaultCentre] controllerForEmotionCode:tempMessage.attributes[TEXT_MESG_DATA][0][0]];
-                [self.navigationController pushViewController:emojiController animated:YES];
-            }
-        }
     }
 }
 
@@ -1030,19 +1023,13 @@ NSString *const LCCKConversationViewControllerErrorDomain = @"LCCKConversationVi
 
 //BQMM集成
 //#pragma mark - MMEmotionCentreDelegate
-- (void)didClickGifTab {
-    //点击gif tab 后应该保证搜索模式是打开的 搜索UI是允许显示的
-    [[MMGifManager defaultManager] setSearchModeEnabled:true withInputView:self.chatBar.textView];
-    [[MMGifManager defaultManager] setSearchUiVisible:true withAttatchedView:self.chatBar];
-    [[MMGifManager defaultManager] showTrending];
-    [self.chatBar onClickGifButton];
-}
-
+//点击键盘中大表情的代理
 - (void)didSelectEmoji:(MMEmoji *)emoji
 {
     [self sendMMFace:emoji];
 }
 
+//点击小表情键盘上发送按钮的代理
 - (void)didSendWithInput:(UIResponder<UITextInput> *)input
 {
     UITextView *textView = (UITextView *)input;
@@ -1054,9 +1041,19 @@ NSString *const LCCKConversationViewControllerErrorDomain = @"LCCKConversationVi
     }
 }
 
+//点击输入框切换表情按钮状态
 - (void)tapOverlay
 {
     [self.chatBar onTapOverlay];
+}
+
+//点击gifTab
+- (void)didClickGifTab {
+    //点击gif tab 后应该保证搜索模式是打开的 搜索UI是允许显示的
+    [[MMGifManager defaultManager] setSearchModeEnabled:true withInputView:self.chatBar.textView];
+    [[MMGifManager defaultManager] setSearchUiVisible:true withAttatchedView:self.chatBar];
+    [[MMGifManager defaultManager] showTrending];
+    [self.chatBar onClickGifButton];
 }
 
 #pragma mark private

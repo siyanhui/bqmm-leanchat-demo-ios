@@ -8,13 +8,14 @@
 
 #import "LCCKChatMessageCell.h"
 #import "AVIMTypedMessage.h"
-
+#import <BQMM/BQMM.h>
 @interface LCCKBQMMMessageCell : LCCKChatMessageCell<LCCKChatMessageCellSubclassing>
 
 /**
  *  用来显示image的UIImageView
  */
-@property (nonatomic, strong, readonly) UIImageView *messageImageView;
+//BQMM集成
+@property (nonatomic, strong, readonly) MMImageView *messageImageView;
 
 - (void)setUploadProgress:(CGFloat)uploadProgress;
 

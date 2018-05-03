@@ -20,7 +20,8 @@
 /**
  *  用来显示image的UIImageView
  */
-@property (nonatomic, strong) UIImageView *messageImageView;
+//BQMM集成
+@property (nonatomic, strong) MMImageView *messageImageView;
 
 /**
  *  用来显示上传进度的UIView
@@ -63,7 +64,6 @@
 }
 
 - (void)singleTapMessageImageViewGestureRecognizerHandler:(UITapGestureRecognizer *)tapGestureRecognizer {
-    //BQMM集成
     if (tapGestureRecognizer.state == UIGestureRecognizerStateEnded) {
         if(self.delegate&&[self.delegate respondsToSelector:@selector(didTapBQMMEemojiMessage:)]){
             [self.delegate didTapBQMMEemojiMessage:self.message];
@@ -80,47 +80,27 @@
         NSDictionary *ext = tempMessage.attributes;
         if([ext[TEXT_MESG_TYPE] isEqualToString:TEXT_MESG_FACE_TYPE]) {
             NSDictionary *ext = tempMessage.attributes;
-            NSArray *codes = nil;
+            NSString *emojiCode = nil;
             if (ext[TEXT_MESG_DATA]) {
-                codes = @[ext[TEXT_MESG_DATA][0][0]];
+                emojiCode = ext[TEXT_MESG_DATA][0][0];
             }
-            __weak typeof(self) weakself = self;
-            [[MMEmotionCentre defaultCentre] fetchEmojisByType:MMFetchTypeBig codes:codes completionHandler:^(NSArray *emojis) {
-                if (emojis.count > 0) {
-                    MMEmoji *emoji = emojis[0];
-                    if ([codes[0] isEqualToString:emoji.emojiCode]) {
-                        weakself.messageImageView.image = emoji.emojiImage;
-                    }
-                }
-                else {
-                    weakself.messageImageView.image = [UIImage imageNamed:@"mm_emoji_error"];
-                }
-            }];
-        }else if([ext[TEXT_MESG_TYPE] isEqualToString:TEXT_MESG_WEB_TYPE]) {
-            self.messageImageView.image = [UIImage imageNamed:@"mm_emoji_loading"];
-            NSDictionary *msgData = ext[TEXT_MESG_DATA];
-            NSString *webStickerUrl = msgData[WEBSTICKER_URL];
-            NSURL *url = [[NSURL alloc] initWithString:webStickerUrl];
-            if (url != nil) {
-                __weak typeof(self) weakSelf = self;
-                [self.messageImageView sd_setImageWithURL:url placeholderImage:nil options:SDWebImageAvoidAutoSetImage completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-                    if(error == nil && image) {
-                        if (image.images.count > 1) {
-                            weakSelf.messageImageView.animationImages = image.images;
-                            weakSelf.messageImageView.image = image.images[0];
-                            weakSelf.messageImageView.animationDuration = image.duration;
-                            [weakSelf.messageImageView startAnimating];
-                        }else{
-                            weakSelf.messageImageView.image = image;
-                        }
-                    }else{
-                        weakSelf.messageImageView.image = [UIImage imageNamed:@"mm_emoji_error"];
-                    }
-                }];
-                
-            }else{
+            
+            if (emojiCode != nil && emojiCode.length > 0) {
+                self.messageImageView.errorImage = [UIImage imageNamed:@"mm_emoji_error"];
+                self.messageImageView.image = [UIImage imageNamed:@"mm_emoji_loading"];
+                [self.messageImageView setImageWithEmojiCode:emojiCode];
+            }else {
                 self.messageImageView.image = [UIImage imageNamed:@"mm_emoji_error"];
             }
+        }else if([ext[TEXT_MESG_TYPE] isEqualToString:TEXT_MESG_WEB_TYPE]) {
+            self.messageImageView.image = [UIImage imageNamed:@"mm_emoji_loading"];
+            
+            self.messageImageView.errorImage = [UIImage imageNamed:@"mm_emoji_error"];
+            NSDictionary *msgData = ext[@"msg_data"];
+            NSString *webStickerUrl = msgData[WEBSTICKER_URL];
+            NSString *webStickerId = msgData[WEBSTICKER_ID];
+
+            [self.messageImageView setImageWithUrl:webStickerUrl gifId:webStickerId];
         }
     }
 }
@@ -160,9 +140,9 @@
 
 #pragma mark - Getters
 
-- (UIImageView *)messageImageView {
+- (MMImageView *)messageImageView {
     if (!_messageImageView) {
-        _messageImageView = [[UIImageView alloc] init];
+        _messageImageView = [[MMImageView alloc] init];
         //FIXME:这一行可以不需要
         _messageImageView.contentMode = UIViewContentModeScaleAspectFit;
         _messageImageView.clipsToBounds = true;
@@ -189,7 +169,6 @@
 -(void)prepareForReuse {
     [super prepareForReuse];
     self.messageImageView.image = nil;
-    self.messageImageView.animationImages = nil;
 }
 
 #pragma mark -

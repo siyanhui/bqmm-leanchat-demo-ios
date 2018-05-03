@@ -68,6 +68,14 @@
 		9AD665CE1D2277920040A4E3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0B721F1CED6644004FDACC /* CoreTelephony.framework */; };
 		9AD665CF1D22779A0040A4E3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0B72211CED664D004FDACC /* CoreLocation.framework */; };
 		9B4A5D37CF8F4BD2C4DC27F7 /* libPods-ChatKit-OC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 386378C3D567179BB0942772 /* libPods-ChatKit-OC.a */; };
+		CC0A52712068F6C500CA4024 /* MMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0A521B2068F6C500CA4024 /* MMTextView.m */; };
+		CC0A52722068F6C500CA4024 /* MMTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0A521C2068F6C500CA4024 /* MMTextAttachment.m */; };
+		CC0A52732068F6C500CA4024 /* MMTextParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0A52202068F6C500CA4024 /* MMTextParser.m */; };
+		CC0A52742068F6C500CA4024 /* MMGifManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0A52232068F6C500CA4024 /* MMGifManager.m */; };
+		CC0A52752068F6C500CA4024 /* MMGifCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0A52242068F6C500CA4024 /* MMGifCell.m */; };
+		CC0A52812068F6C500CA4024 /* DXPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0A52452068F6C500CA4024 /* DXPopover.m */; };
+		CC0A52952068F6C500CA4024 /* BQMM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0A526F2068F6C500CA4024 /* BQMM.framework */; };
+		CC0A52962068F6C500CA4024 /* BQMM.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CC0A52702068F6C500CA4024 /* BQMM.bundle */; };
 		CCC107821FF3A5090001D119 /* LCChatKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC106961FF3A5090001D119 /* LCChatKit.m */; };
 		CCC107831FF3A5090001D119 /* LCCKConversationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC1069B1FF3A5090001D119 /* LCCKConversationListViewController.m */; };
 		CCC107841FF3A5090001D119 /* LCCKConversationListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC1069E1FF3A5090001D119 /* LCCKConversationListViewModel.m */; };
@@ -170,14 +178,6 @@
 		CCC107E61FF3A50A0001D119 /* NSDate+LCCKDateTools.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC1077C1FF3A5090001D119 /* NSDate+LCCKDateTools.m */; };
 		CCC107E71FF3A50A0001D119 /* LCCKError.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC1077D1FF3A5090001D119 /* LCCKError.m */; };
 		CCC107E91FF3A7110001D119 /* lame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC107E81FF3A7110001D119 /* lame.framework */; };
-		CCC107FE1FF3A9880001D119 /* MMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC107EC1FF3A9880001D119 /* MMTextView.m */; };
-		CCC107FF1FF3A9880001D119 /* MMTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC107ED1FF3A9880001D119 /* MMTextAttachment.m */; };
-		CCC108001FF3A9880001D119 /* MMTextParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC107F11FF3A9880001D119 /* MMTextParser.m */; };
-		CCC108011FF3A9880001D119 /* MMGifManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC107F41FF3A9880001D119 /* MMGifManager.m */; };
-		CCC108021FF3A9880001D119 /* MMGifCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC107F51FF3A9880001D119 /* MMGifCell.m */; };
-		CCC108031FF3A9880001D119 /* DXPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC107FA1FF3A9880001D119 /* DXPopover.m */; };
-		CCC108041FF3A9880001D119 /* BQMM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC107FC1FF3A9880001D119 /* BQMM.framework */; };
-		CCC108051FF3A9880001D119 /* BQMM.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CCC107FD1FF3A9880001D119 /* BQMM.bundle */; };
 		CCC108091FF4C8A60001D119 /* LCCKBQMMMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC108081FF4C8A60001D119 /* LCCKBQMMMessageCell.m */; };
 		E7586C4F1D630681000C18B4 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7586C4E1D630681000C18B4 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
@@ -320,6 +320,20 @@
 		9AC3A4DC1DF9C8BD00F3405F /* LCCKUserGroupItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCKUserGroupItemCell.m; sourceTree = "<group>"; };
 		9AC3A4E01DF9CE0300F3405F /* LCCKChatDetailHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCKChatDetailHelper.h; sourceTree = "<group>"; };
 		9AC3A4E11DF9CE0300F3405F /* LCCKChatDetailHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCKChatDetailHelper.m; sourceTree = "<group>"; };
+		CC0A521B2068F6C500CA4024 /* MMTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTextView.m; sourceTree = "<group>"; };
+		CC0A521C2068F6C500CA4024 /* MMTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTextAttachment.m; sourceTree = "<group>"; };
+		CC0A521D2068F6C500CA4024 /* MMTextParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTextParser.h; sourceTree = "<group>"; };
+		CC0A521E2068F6C500CA4024 /* MMTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTextView.h; sourceTree = "<group>"; };
+		CC0A521F2068F6C500CA4024 /* MMTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTextAttachment.h; sourceTree = "<group>"; };
+		CC0A52202068F6C500CA4024 /* MMTextParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTextParser.m; sourceTree = "<group>"; };
+		CC0A52222068F6C500CA4024 /* MMGifCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMGifCell.h; sourceTree = "<group>"; };
+		CC0A52232068F6C500CA4024 /* MMGifManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMGifManager.m; sourceTree = "<group>"; };
+		CC0A52242068F6C500CA4024 /* MMGifCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMGifCell.m; sourceTree = "<group>"; };
+		CC0A52252068F6C500CA4024 /* MMGifManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMGifManager.h; sourceTree = "<group>"; };
+		CC0A52442068F6C500CA4024 /* DXPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXPopover.h; sourceTree = "<group>"; };
+		CC0A52452068F6C500CA4024 /* DXPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXPopover.m; sourceTree = "<group>"; };
+		CC0A526F2068F6C500CA4024 /* BQMM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BQMM.framework; sourceTree = "<group>"; };
+		CC0A52702068F6C500CA4024 /* BQMM.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BQMM.bundle; sourceTree = "<group>"; };
 		CCC106961FF3A5090001D119 /* LCChatKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCChatKit.m; sourceTree = "<group>"; };
 		CCC1069A1FF3A5090001D119 /* LCCKConversationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCKConversationListViewController.h; sourceTree = "<group>"; };
 		CCC1069B1FF3A5090001D119 /* LCCKConversationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCKConversationListViewController.m; sourceTree = "<group>"; };
@@ -522,20 +536,6 @@
 		CCC1077F1FF3A5090001D119 /* LCCKError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCKError.h; sourceTree = "<group>"; };
 		CCC107801FF3A5090001D119 /* LCCKDateToolsConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCKDateToolsConstants.h; sourceTree = "<group>"; };
 		CCC107E81FF3A7110001D119 /* lame.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = lame.framework; sourceTree = "<group>"; };
-		CCC107EC1FF3A9880001D119 /* MMTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTextView.m; sourceTree = "<group>"; };
-		CCC107ED1FF3A9880001D119 /* MMTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTextAttachment.m; sourceTree = "<group>"; };
-		CCC107EE1FF3A9880001D119 /* MMTextParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTextParser.h; sourceTree = "<group>"; };
-		CCC107EF1FF3A9880001D119 /* MMTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTextView.h; sourceTree = "<group>"; };
-		CCC107F01FF3A9880001D119 /* MMTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTextAttachment.h; sourceTree = "<group>"; };
-		CCC107F11FF3A9880001D119 /* MMTextParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTextParser.m; sourceTree = "<group>"; };
-		CCC107F31FF3A9880001D119 /* MMGifCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMGifCell.h; sourceTree = "<group>"; };
-		CCC107F41FF3A9880001D119 /* MMGifManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMGifManager.m; sourceTree = "<group>"; };
-		CCC107F51FF3A9880001D119 /* MMGifCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMGifCell.m; sourceTree = "<group>"; };
-		CCC107F61FF3A9880001D119 /* MMGifManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMGifManager.h; sourceTree = "<group>"; };
-		CCC107F91FF3A9880001D119 /* DXPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXPopover.h; sourceTree = "<group>"; };
-		CCC107FA1FF3A9880001D119 /* DXPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXPopover.m; sourceTree = "<group>"; };
-		CCC107FC1FF3A9880001D119 /* BQMM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BQMM.framework; sourceTree = "<group>"; };
-		CCC107FD1FF3A9880001D119 /* BQMM.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BQMM.bundle; sourceTree = "<group>"; };
 		CCC108071FF4C8A60001D119 /* LCCKBQMMMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCCKBQMMMessageCell.h; sourceTree = "<group>"; };
 		CCC108081FF4C8A60001D119 /* LCCKBQMMMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCCKBQMMMessageCell.m; sourceTree = "<group>"; };
 		D3D1667D1FD4EBB90019FDFF /* ChatKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = ChatKit.podspec; path = ../ChatKit.podspec; sourceTree = "<group>"; };
@@ -555,7 +555,7 @@
 				CCC107E91FF3A7110001D119 /* lame.framework in Frameworks */,
 				9AD665CC1D2277830040A4E3 /* SystemConfiguration.framework in Frameworks */,
 				9B4A5D37CF8F4BD2C4DC27F7 /* libPods-ChatKit-OC.a in Frameworks */,
-				CCC108041FF3A9880001D119 /* BQMM.framework in Frameworks */,
+				CC0A52952068F6C500CA4024 /* BQMM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -893,7 +893,7 @@
 		9A754D421CECAC3E000967F1 = {
 			isa = PBXGroup;
 			children = (
-				CCC107EA1FF3A9880001D119 /* BQMM_SDK */,
+				CC0A52192068F6C500CA4024 /* BQMM_SDK */,
 				CCC107E81FF3A7110001D119 /* lame.framework */,
 				CCC106931FF3A5090001D119 /* ChatKit */,
 				9A4CBADB1DB87F2000E61C92 /* ChatKit-OC.entitlements */,
@@ -1031,6 +1031,67 @@
 				9AC3A4E11DF9CE0300F3405F /* LCCKChatDetailHelper.m */,
 			);
 			path = ChatDetailHelper;
+			sourceTree = "<group>";
+		};
+		CC0A52192068F6C500CA4024 /* BQMM_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				CC0A521A2068F6C500CA4024 /* BQMM_EXT */,
+				CC0A52212068F6C500CA4024 /* BQMM_GIF */,
+				CC0A526E2068F6C500CA4024 /* BQMM */,
+			);
+			path = BQMM_SDK;
+			sourceTree = "<group>";
+		};
+		CC0A521A2068F6C500CA4024 /* BQMM_EXT */ = {
+			isa = PBXGroup;
+			children = (
+				CC0A521B2068F6C500CA4024 /* MMTextView.m */,
+				CC0A521C2068F6C500CA4024 /* MMTextAttachment.m */,
+				CC0A521D2068F6C500CA4024 /* MMTextParser.h */,
+				CC0A521E2068F6C500CA4024 /* MMTextView.h */,
+				CC0A521F2068F6C500CA4024 /* MMTextAttachment.h */,
+				CC0A52202068F6C500CA4024 /* MMTextParser.m */,
+			);
+			path = BQMM_EXT;
+			sourceTree = "<group>";
+		};
+		CC0A52212068F6C500CA4024 /* BQMM_GIF */ = {
+			isa = PBXGroup;
+			children = (
+				CC0A52222068F6C500CA4024 /* MMGifCell.h */,
+				CC0A52232068F6C500CA4024 /* MMGifManager.m */,
+				CC0A52242068F6C500CA4024 /* MMGifCell.m */,
+				CC0A52252068F6C500CA4024 /* MMGifManager.h */,
+				CC0A52262068F6C500CA4024 /* vendor */,
+			);
+			path = BQMM_GIF;
+			sourceTree = "<group>";
+		};
+		CC0A52262068F6C500CA4024 /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				CC0A52432068F6C500CA4024 /* DXPopover */,
+			);
+			path = vendor;
+			sourceTree = "<group>";
+		};
+		CC0A52432068F6C500CA4024 /* DXPopover */ = {
+			isa = PBXGroup;
+			children = (
+				CC0A52442068F6C500CA4024 /* DXPopover.h */,
+				CC0A52452068F6C500CA4024 /* DXPopover.m */,
+			);
+			path = DXPopover;
+			sourceTree = "<group>";
+		};
+		CC0A526E2068F6C500CA4024 /* BQMM */ = {
+			isa = PBXGroup;
+			children = (
+				CC0A526F2068F6C500CA4024 /* BQMM.framework */,
+				CC0A52702068F6C500CA4024 /* BQMM.bundle */,
+			);
+			path = BQMM;
 			sourceTree = "<group>";
 		};
 		CCC106931FF3A5090001D119 /* ChatKit */ = {
@@ -1516,67 +1577,6 @@
 			path = DateTools;
 			sourceTree = "<group>";
 		};
-		CCC107EA1FF3A9880001D119 /* BQMM_SDK */ = {
-			isa = PBXGroup;
-			children = (
-				CCC107EB1FF3A9880001D119 /* BQMM_EXT */,
-				CCC107F21FF3A9880001D119 /* BQMM_GIF */,
-				CCC107FB1FF3A9880001D119 /* BQMM */,
-			);
-			path = BQMM_SDK;
-			sourceTree = "<group>";
-		};
-		CCC107EB1FF3A9880001D119 /* BQMM_EXT */ = {
-			isa = PBXGroup;
-			children = (
-				CCC107EC1FF3A9880001D119 /* MMTextView.m */,
-				CCC107ED1FF3A9880001D119 /* MMTextAttachment.m */,
-				CCC107EE1FF3A9880001D119 /* MMTextParser.h */,
-				CCC107EF1FF3A9880001D119 /* MMTextView.h */,
-				CCC107F01FF3A9880001D119 /* MMTextAttachment.h */,
-				CCC107F11FF3A9880001D119 /* MMTextParser.m */,
-			);
-			path = BQMM_EXT;
-			sourceTree = "<group>";
-		};
-		CCC107F21FF3A9880001D119 /* BQMM_GIF */ = {
-			isa = PBXGroup;
-			children = (
-				CCC107F31FF3A9880001D119 /* MMGifCell.h */,
-				CCC107F41FF3A9880001D119 /* MMGifManager.m */,
-				CCC107F51FF3A9880001D119 /* MMGifCell.m */,
-				CCC107F61FF3A9880001D119 /* MMGifManager.h */,
-				CCC107F71FF3A9880001D119 /* vendor */,
-			);
-			path = BQMM_GIF;
-			sourceTree = "<group>";
-		};
-		CCC107F71FF3A9880001D119 /* vendor */ = {
-			isa = PBXGroup;
-			children = (
-				CCC107F81FF3A9880001D119 /* DXPopover */,
-			);
-			path = vendor;
-			sourceTree = "<group>";
-		};
-		CCC107F81FF3A9880001D119 /* DXPopover */ = {
-			isa = PBXGroup;
-			children = (
-				CCC107F91FF3A9880001D119 /* DXPopover.h */,
-				CCC107FA1FF3A9880001D119 /* DXPopover.m */,
-			);
-			path = DXPopover;
-			sourceTree = "<group>";
-		};
-		CCC107FB1FF3A9880001D119 /* BQMM */ = {
-			isa = PBXGroup;
-			children = (
-				CCC107FC1FF3A9880001D119 /* BQMM.framework */,
-				CCC107FD1FF3A9880001D119 /* BQMM.bundle */,
-			);
-			path = BQMM;
-			sourceTree = "<group>";
-		};
 		DA96A2E70997437673F17F60 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1634,10 +1634,10 @@
 					9A754D4A1CECAC3E000967F1 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = HY2JF7VN6E;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -1667,6 +1667,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC0A52962068F6C500CA4024 /* BQMM.bundle in Resources */,
 				9A4730711CECAEC500AEB86F /* LaunchScreen.storyboard in Resources */,
 				9A4730701CECAEC500AEB86F /* Assets.xcassets in Resources */,
 				9A2669CE1D6DA89100B66545 /* LCCKVCardView.xib in Resources */,
@@ -1685,7 +1686,6 @@
 				CCC107B71FF3A5090001D119 /* Other.bundle in Resources */,
 				CCC107B51FF3A5090001D119 /* VoiceMessageSource.bundle in Resources */,
 				CCC107BE1FF3A5090001D119 /* Placeholder.bundle in Resources */,
-				CCC108051FF3A9880001D119 /* BQMM.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1882,7 +1882,6 @@
 				9AC3A4DD1DF9C8BD00F3405F /* LCCKUserGroupCell.m in Sources */,
 				CCC107D51FF3A50A0001D119 /* NSString+LCCKExtension.m in Sources */,
 				CCC107A51FF3A5090001D119 /* LCCKMenuItem.m in Sources */,
-				CCC108021FF3A9880001D119 /* MMGifCell.m in Sources */,
 				CCC107A11FF3A5090001D119 /* LCCKInputViewPluginLocation.m in Sources */,
 				9A53BE421D8BB19C00AAB118 /* LCChatKitExample+Setting.m in Sources */,
 				CCC107E11FF3A50A0001D119 /* LCCKWebViewController.m in Sources */,
@@ -1894,7 +1893,6 @@
 				9A562A381E03D52F00BB23DD /* LCCKSettingCell.m in Sources */,
 				CCC107AF1FF3A5090001D119 /* LCCKLocationManager.m in Sources */,
 				CCC107DE1FF3A50A0001D119 /* LCCKPhotoBrowser.m in Sources */,
-				CCC107FE1FF3A9880001D119 /* MMTextView.m in Sources */,
 				CCC107CF1FF3A50A0001D119 /* LCCKSignatureService.m in Sources */,
 				CCC107A31FF3A5090001D119 /* LCCKChatMoreView.m in Sources */,
 				9A562A371E03D52F00BB23DD /* LCCKSettingButtonCell.m in Sources */,
@@ -1904,7 +1902,6 @@
 				9AC3A4CD1DF9C14500F3405F /* NSFileManager+LCCKExtension.m in Sources */,
 				CCC107AD1FF3A5090001D119 /* LCCKAVAudioPlayer.m in Sources */,
 				CCC107D81FF3A50A0001D119 /* NSFileManager+LCCKExtension.m in Sources */,
-				CCC108001FF3A9880001D119 /* MMTextParser.m in Sources */,
 				9AC3A4931DF9B7D500F3405F /* LCCKGroupConversationDetailViewController.m in Sources */,
 				CCC107D71FF3A50A0001D119 /* NSBundle+LCCKExtension.m in Sources */,
 				9A2669C81D6DA89100B66545 /* LCCKInputViewPluginConversationBackground.m in Sources */,
@@ -1929,11 +1926,11 @@
 				CCC1078A1FF3A5090001D119 /* LCCKBaseNavigationController.m in Sources */,
 				CCC107B21FF3A5090001D119 /* LCCKFaceManager.m in Sources */,
 				CCC107C11FF3A5090001D119 /* NSMutableArray+LCCKMessageExtention.m in Sources */,
+				CC0A52812068F6C500CA4024 /* DXPopover.m in Sources */,
 				CCC107CC1FF3A5090001D119 /* LCCKUserSystemService.m in Sources */,
 				9A53BE2E1D8BB13E00AAB118 /* AppDelegate+RedPacket.m in Sources */,
 				9A2669CD1D6DA89100B66545 /* LCCKVCardView.m in Sources */,
 				CCC107AC1FF3A5090001D119 /* LCCKBubbleImageFactory.m in Sources */,
-				CCC108031FF3A9880001D119 /* DXPopover.m in Sources */,
 				CCC107C21FF3A5090001D119 /* AVIMTypedMessage+LCCKExtension.m in Sources */,
 				CCC107C81FF3A5090001D119 /* LCCKSingleton.m in Sources */,
 				9A47306A1CECAEC500AEB86F /* DEMODataSource.m in Sources */,
@@ -1962,10 +1959,10 @@
 				9A562A3C1E03D52F00BB23DD /* LCCKSettingFooterTitleView.m in Sources */,
 				9AC3A4E21DF9CE0300F3405F /* LCCKChatDetailHelper.m in Sources */,
 				9A53BE2C1D8BB13E00AAB118 /* AVIMTypedMessageRedPacketTaken.m in Sources */,
-				CCC108011FF3A9880001D119 /* MMGifManager.m in Sources */,
 				CCC107A41FF3A5090001D119 /* LCCKConversationNavigationTitleView.m in Sources */,
 				CCC1078C1FF3A5090001D119 /* LCCKBaseConversationViewController.m in Sources */,
 				CCC107E51FF3A50A0001D119 /* LCCKAlertController.m in Sources */,
+				CC0A52722068F6C500CA4024 /* MMTextAttachment.m in Sources */,
 				9A53BE2B1D8BB13E00AAB118 /* AVIMTypedMessageRedPacket.m in Sources */,
 				9A562A3A1E03D52F00BB23DD /* LCCKSettingGroup.m in Sources */,
 				CCC1079A1FF3A5090001D119 /* LCCKChatMessageCell.m in Sources */,
@@ -1980,6 +1977,7 @@
 				9AC3A4B91DF9BEE600F3405F /* UIColor+LCCKExtension.m in Sources */,
 				9AC3A4901DF9B7B400F3405F /* LCCKSingleConversationDetailViewController.m in Sources */,
 				CCC107E61FF3A50A0001D119 /* NSDate+LCCKDateTools.m in Sources */,
+				CC0A52742068F6C500CA4024 /* MMGifManager.m in Sources */,
 				CCC107821FF3A5090001D119 /* LCChatKit.m in Sources */,
 				CCC107B31FF3A5090001D119 /* LCCKLastMessageTypeManager.m in Sources */,
 				9A4730731CECAEC500AEB86F /* main.m in Sources */,
@@ -1987,9 +1985,11 @@
 				CCC107D31FF3A50A0001D119 /* UIView+LCCKExtension.m in Sources */,
 				CCC107971FF3A5090001D119 /* LCCKChatImageMessageCell.m in Sources */,
 				9A4730751CECAEC500AEB86F /* NSObject+LCCKHUD.m in Sources */,
+				CC0A52752068F6C500CA4024 /* MMGifCell.m in Sources */,
 				CCC107E31FF3A50A0001D119 /* LCCKWebViewProgress.m in Sources */,
 				9A53BE401D8BB19C00AAB118 /* AppDelegate.m in Sources */,
 				9AC3A4BA1DF9BEE600F3405F /* UIFont+LCCKExtension.m in Sources */,
+				CC0A52712068F6C500CA4024 /* MMTextView.m in Sources */,
 				9A53BE431D8BB19C00AAB118 /* LCCKTabBarControllerConfig.m in Sources */,
 				CCC1079E1FF3A5090001D119 /* LCCKFacePageView.m in Sources */,
 				9A562A361E03D52F00BB23DD /* LCCKSettingViewController.m in Sources */,
@@ -2001,7 +2001,6 @@
 				CCC1078F1FF3A5090001D119 /* LCCKTextFullScreenViewController.m in Sources */,
 				CCC107DC1FF3A50A0001D119 /* LCCKTapDetectingImageView.m in Sources */,
 				9A47306B1CECAEC500AEB86F /* LCCKLoginDataSource.m in Sources */,
-				CCC107FF1FF3A9880001D119 /* MMTextAttachment.m in Sources */,
 				9AC3A4B81DF9BEE600F3405F /* LCCKUIUtility.m in Sources */,
 				9A562A3D1E03D52F00BB23DD /* LCCKSettingHeaderTitleView.m in Sources */,
 				CCC107E71FF3A50A0001D119 /* LCCKError.m in Sources */,
@@ -2013,6 +2012,7 @@
 				CCC107AB1FF3A5090001D119 /* NSBundle+LCCKCaleArray.m in Sources */,
 				CCC107C71FF3A5090001D119 /* LCCKConversationRefreshHeader.m in Sources */,
 				CCC107D11FF3A50A0001D119 /* UIColor+LCCKExtension.m in Sources */,
+				CC0A52732068F6C500CA4024 /* MMTextParser.m in Sources */,
 				9AC3A4D31DF9C16A00F3405F /* NSDate+Extension.m in Sources */,
 				CCC107931FF3A5090001D119 /* LCCKChatVoiceMessageCell.m in Sources */,
 				9AC3A4D71DF9C25200F3405F /* NSFileManager+Paths.m in Sources */,
@@ -2153,9 +2153,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = "ChatKit-OC.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = HY2JF7VN6E;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2189,8 +2189,8 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.siyanhui.leancloud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "74e2767a-1041-44a3-8644-ecd1d2df6d65";
+				PROVISIONING_PROFILE_SPECIFIER = "huyanghua provisioning file";
 			};
 			name = Debug;
 		};
@@ -2201,9 +2201,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = "ChatKit-OC.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = HY2JF7VN6E;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2237,8 +2237,8 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.siyanhui.leancloud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "74e2767a-1041-44a3-8644-ecd1d2df6d65";
+				PROVISIONING_PROFILE_SPECIFIER = "huyanghua provisioning file";
 			};
 			name = Release;
 		};
